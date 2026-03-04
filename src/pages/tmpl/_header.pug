@@ -1,0 +1,66 @@
+header.header
+	.main-info
+		.main-info__icon
+			+svg('ic-box','ic-box', '28', '29')
+		.main-info__label Бесплатная доставка в любой регион России
+
+	.header-top
+		ul.top-menu
+			-
+				var list=[
+					{text:'О нас'},
+					{text:'Доставка и оплата'},
+					{text:'Магазины и контакты'},
+				]
+			each item in list
+				li.top-menu__item
+					a(href="#")= item.text
+
+		.header-top__info
+			.header-top__phone
+				a(href="tel:+74952231105") +7 495 223-11-05
+
+			.header-social
+				a(href="#").header-social__item
+					+svg('ic-tg-circle','ic-tg-circle', '21', '21')
+
+				a(href="#").header-social__item
+					+svg('ic-whatsapp-circle','ic-whatsapp-circle', '20', '20')
+
+			a(href="#").header-top__callback Обратный звонок
+			
+			.header-address
+				.header-address__icon
+					+svg('ic-metro','ic-metro', '18', '21')
+				.header-address__text Курская, ул. Верхняя Сыромятническая, д. 2
+
+	.header-main
+		.header-main__logo
+			img(src="/upload/logo.svg", alt="")
+
+		.catalog-menu
+			.catalog-menu__btn
+				.ic-hamburger
+					span
+				|Каталог
+
+		form.search-form
+			input(type="text", placeholder="Поиск по каталогу")
+			button(type="submit")
+				+svg('ic-search','ic-search', '25', '27')
+
+		.header-auth
+			+svg('ic-crown','ic-crown', '21', '19')
+			|Вход
+
+		.header-action
+			a(href="#").header-action__item
+				span.header-action__icon
+					+svg('ic-heart','ic-heart', '25', '23')
+					span.header-action__count 2
+
+			a(href="#").header-action__item
+				span.header-action__icon
+					+svg('ic-cart','ic-cart', '26', '26')
+					span.header-action__count 8
+				span.header-action__price 128 990 &#8381;

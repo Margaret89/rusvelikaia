@@ -1,0 +1,22 @@
+/*-------------- social -----------------*/
+.social{
+	&__label{
+		font-size: 1.4rem;
+		margin-bottom: 15px;
+	}
+
+	&__list{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 17px;
+	}
+
+	&__item{
+		.ic-rutube{margin-top: -6px;}
+
+		transition: opacity 0.2s ease;
+
+		&:hover{opacity: 0.6;}
+	}
+}

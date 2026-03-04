@@ -1,0 +1,90 @@
+footer.footer
+	.st-width
+		.footer__content
+			.footer__col
+				.footer__logo
+					img(src="/upload/logo-short-white.svg", alt="Логотип")
+
+				.footer__info ООО «Компания «Русь Великая» – интернет-магазин дорогих, элитных подарков и сувениров. Все информационные материалы представленные на сайте являются объектом интеллектуальной собственности и охраняются законом. Любое внешнее использование запрещено.
+
+			.footer__col
+				.footer__title
+					a(href="#") Каталог
+
+				ul.footer-catalog-menu
+					-
+						var list=[
+							{text:'Интерьерные изделия'},
+							{text:'Коллекционирование'},
+							{text:'Настольные принадлежности'},
+							{text:'Настольные игры'},
+							{text:'Хобби'},
+							{text:'Сувенирное оружие'},
+							{text:'Религиозные подарки'},
+							{text:'Посуда'},
+							{text:'Сувениры'},
+							{text:'Русские подарки'},
+							{text:'Русский народный костюм'},
+							{text:'Украшения'},
+							{text:'Аксессуары'},
+							{text:'Подарочная упаковка'},
+							{text:'Сувенирные ножи'},
+						]
+					each item in list
+						li.footer-catalog-menu__item
+							a(href="#")= item.text
+
+			.footer__col
+				ul.footer-menu
+					-
+						var list=[
+							{text:'О компании'},
+							{text:'Оплата/Доставка'},
+							{text:'Контакты'},
+							{text:'Статьи'},
+						]
+					each item in list
+						li.footer-menu__item
+							a(href="#")= item.text
+
+				.footer-contacts
+					.footer-contacts__item
+						.footer-contacts__val
+							a(href="tel:+74952231105") +7 (495) 223-11-05
+
+					.footer-contacts__item
+						.footer-contacts__callback
+							a(href="#") Заказать обратный звонок
+
+					.footer-contacts__item
+						.footer-contacts__val
+							a(href="mailto:rus-vel@yandex.ru") rus-vel@yandex.ru
+
+				.footer__polit
+					a(href="#") Политика конфиденциальности
+
+				.social
+					.social__label Мы в соцсетях
+
+					.social__list
+						a(href="#").social__item
+							+svg('ic-dzen','ic-dzen', '27', '27')
+
+						a(href="#").social__item
+							+svg('ic-vk','ic-vk', '30', '19')
+
+						a(href="#").social__item
+							+svg('ic-rutube','ic-rutube', '30', '26')
+
+						a(href="#").social__item
+							+svg('ic-telegram','ic-telegram', '28', '23')
+
+			.footer__col
+				.footer__title Салон-магазин
+
+				.footer__address
+					|1051120 г. Москва, ул. Верхняя Сыромятническая, 2
+					br
+					|Ювелирный центр «Голден Гросс»
+
+				.footer__time с 09:00 до 21:00

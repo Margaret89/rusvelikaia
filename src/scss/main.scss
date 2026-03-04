@@ -1,0 +1,14 @@
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/reset";
+
+
+@import "layouts/main";
+@import "layouts/header";
+@import "layouts/footer";
+
+@import "components/icons";
+@import "components/type-icon";
+@import "components/burger";
+@import "components/search-form";
+@import "components/social";

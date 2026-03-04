@@ -1,0 +1,139 @@
+.footer{
+	background: var(--color-primary);
+	color: #fff;
+	padding: 37px 0;
+
+	&__content{
+		display: flex;
+		justify-content: space-between;
+		gap: 30px;
+	}
+
+	&__col{width: calc(25% - 22.5px);}
+	&__logo{margin-bottom: 30px;}
+
+	&__info{
+		font-size: 1.4rem;
+		line-height: 1.57;
+		padding-right: 46px;
+	}
+
+	&__title{
+		font-size: 1.8rem;
+		margin-bottom: 22px;
+		
+		a{
+			color: #fff;
+			text-decoration: none;
+			transition: all 0.2s ease;
+
+			&:hover{text-decoration: underline;}
+		}
+	}
+
+	&__polit{
+		font-size: 1.6rem;
+		margin-top: 22px;
+		
+		a{
+			color: #fff;
+			text-decoration: none;
+			transition: all 0.2s ease;
+
+			&:hover{text-decoration: underline;}
+		}
+	}
+
+	.social{
+		color: #fff;
+		margin-top: 22px;
+
+		&__item{color: #fff;}
+	}
+
+	&__address{
+		font-size: 1.4rem;
+		line-height: 1.6;
+	}
+
+	&__time{
+		font-size: 1.8rem;
+		margin-top: 12px;
+	}
+}
+
+.footer-catalog-menu{
+	&,
+	&__item{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__item{
+		font-size: 1.6rem;
+		margin-bottom: 3.5px;
+
+		a{
+			color: #fff;
+			text-decoration: none;
+			transition: all 0.2s ease;
+
+			&:hover{text-decoration: underline;}
+		}
+	}
+}
+
+.footer-menu{
+	&,
+	&__item{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__item{
+		font-size: 1.8rem;
+		margin-bottom: 17px;
+
+		a{
+			color: #fff;
+			text-decoration: none;
+			transition: all 0.2s ease;
+
+			&:hover{text-decoration: underline;}
+		}
+	}
+}
+
+.footer-contacts{
+	margin-top: 20px;
+	&__item{margin-bottom: 9px;}
+
+	&__val{
+		font-size: 1.8rem;
+		
+		a{
+			color: #fff;
+			text-decoration: none;
+			transition: all 0.2s ease;
+
+			&:hover{text-decoration: none;}
+		}
+	}
+
+	&__callback{
+		font-size: 1.3rem;
+		
+		a{
+			color: #D68F8F;
+			text-decoration: none;
+			transition: all 0.2s ease;
+
+			&:hover{
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+	}
+}
