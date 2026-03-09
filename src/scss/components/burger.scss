@@ -23,10 +23,10 @@
 		height: 3px;
 		border-radius: 1px;
 		position: absolute;
-		top: 12px;
-		left: 3px;
+		top: 10px;
+		left: 0;
 		background: #fff;
-		transition: background-color 0.2s ease 0s;
+		transition: background-color 0.3s ease 0s;
 	}
 	
 	span::before,
@@ -39,7 +39,7 @@
 		height: 3px;
 		border-radius: 1px;
 		background: #fff;
-		transition: background-color 0.2s ease 0s;
+		transition: background-color 0.3s ease 0s;
 	}
 	
 	span::before {top: -10px;}

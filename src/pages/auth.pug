@@ -1,0 +1,255 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'auth'
+
+block body
+	.auth-popup
+		.auth-popup-brand
+			a(href="#").auth-popup-brand__link
+				img(src="/upload/auth-brand1.jpg", alt="")
+			//- .auth-popup-brand__content
+			//- 	.auth-popup-brand__top
+			//- 		.auth-popup-brand__logo
+			//- 			img(src="/upload/asfour.png", alt="")
+
+			//- 		.auth-popup-brand__text Asfour — один из немногих в мире брендов, кто в совершенстве освоил технологии нанесения стойких цветных покрытий, таких как «Аура» и «Сатин».
+				
+			//- 	.auth-popup-brand__img
+			//- 		img(src="/upload/ph.jpg", alt="")
+
+			//- 	.auth-popup-brand__link
+			//- 		a(href="#") Все товары бренда
+
+		.auth-popup__main
+			.auth-popup__title Вход в личный кабинет
+
+			.auth-popup__text Введите телефон. На этот номер поступит смс с&nbsp;кодом подтверждения.
+
+			form.auth-form.js-auth-form
+				label.auth-form__item
+					input(name="phone", type="text", required="required", placeholder=" ", class="js-phone")
+
+					.auth-form__label Телефон
+
+					.auth-form__close.js-auth-form-close
+						+svg('ic-close','ic-close', '17', '17')
+
+				.auth-form__btn
+					input(type="submit", value="Войти").btn.btn_small
+
+			.auth-popup-social
+				.auth-popup-social__title или
+
+				.auth-popup-social__list
+					-
+						var list=[
+							{img:'ya.svg', text:'Вход с Яндекс ID'},
+							{img:'vk.svg', text:'Вход с VK ID'},
+							{img:'sber.svg', text:'Вход по Сбер ID'},
+							{img:'tbank.svg', text:'Вход по Тинькофф ID'},
+						]
+					each item in list
+						.auth-popup-social__item
+							a(href="#").auth-popup-social__link
+								span.auth-popup-social__icon
+									img(src="/upload/"+item.img, alt="")
+
+								span.auth-popup-social__label= item.text
+
+			.auth-popup__label Нажимая на кнопку, я соглашаюсь с правилами пользования торговой площадкой и политикой конфиденциальности.
+	
+	br
+	br
+	br
+	
+	.auth-popup
+		.auth-popup-brand
+			a(href="#").auth-popup-brand__link
+				img(src="/upload/auth-brand2.jpg", alt="")
+			//- .auth-popup-brand__content
+			//- 	.auth-popup-brand__top
+			//- 		.auth-popup-brand__logo
+			//- 			img(src="/upload/logo-rus.svg", alt="")
+
+			//- 		.auth-popup-brand__text Основой коллекции являются миниатюрные скульптуры: от элегантных животных и мифологических персонажей до абстрактных форм.
+				
+			//- 	.auth-popup-brand__img
+			//- 		img(src="/upload/tree.jpg", alt="")
+
+			//- 	.auth-popup-brand__link
+			//- 		a(href="#") Все товары коллекции
+
+		.auth-popup__main
+			.auth-popup__title Введите код из смс
+
+			.auth-popup__text Мы отправили его на номер
+				.auth-popup__phone +7 903 254-23-20
+
+			form.sms-form
+				input(type="text", class="js-code-input", maxlength="1")
+				input(type="text", class="js-code-input", maxlength="1")
+				input(type="text", class="js-code-input", maxlength="1")
+				input(type="text", class="js-code-input", maxlength="1")
+
+			.auth-popup__note Новый код можно получить через 0:23
+
+			.auth-popup-social
+				.auth-popup-social__title или
+
+				.auth-popup-social__list
+					-
+						var list=[
+							{img:'ya.svg', text:'Вход с Яндекс ID'},
+							{img:'vk.svg', text:'Вход с VK ID'},
+							{img:'sber.svg', text:'Вход по Сбер ID'},
+							{img:'tbank.svg', text:'Вход по Тинькофф ID'},
+						]
+					each item in list
+						.auth-popup-social__item
+							a(href="#").auth-popup-social__link
+								span.auth-popup-social__icon
+									img(src="/upload/"+item.img, alt="")
+
+								span.auth-popup-social__label= item.text
+
+			.auth-popup__label Нажимая на кнопку, я соглашаюсь с правилами пользования торговой площадкой и политикой конфиденциальности.
+
+	br
+	br
+	br
+	.auth-popup
+		.auth-popup-brand
+			a(href="#").auth-popup-brand__link
+				img(src="/upload/auth-brand3.jpg", alt="")
+
+		.auth-popup__main
+			.auth-popup__title Вход в личный кабинет
+
+			.auth-popup__text Введите телефон. На этот номер поступит смс с&nbsp;кодом подтверждения.
+
+			form.auth-form.js-auth-form
+				label.auth-form__item
+					input(name="phone", type="text", required="required", placeholder=" ", class="js-phone")
+
+					.auth-form__label Телефон
+
+					.auth-form__close.js-auth-form-close
+						+svg('ic-close','ic-close', '17', '17')
+
+				.auth-form__btn
+					input(type="submit", value="Войти").btn.btn_small
+
+			.auth-popup-social
+				.auth-popup-social__title или
+
+				.auth-popup-social__list
+					-
+						var list=[
+							{img:'ya.svg', text:'Вход с Яндекс ID'},
+							{img:'vk.svg', text:'Вход с VK ID'},
+							{img:'sber.svg', text:'Вход по Сбер ID'},
+							{img:'tbank.svg', text:'Вход по Тинькофф ID'},
+						]
+					each item in list
+						.auth-popup-social__item
+							a(href="#").auth-popup-social__link
+								span.auth-popup-social__icon
+									img(src="/upload/"+item.img, alt="")
+
+								span.auth-popup-social__label= item.text
+
+			.auth-popup__label Нажимая на кнопку, я соглашаюсь с правилами пользования торговой площадкой и политикой конфиденциальности.
+	
+	br
+	br
+	br
+	.auth-popup
+		.auth-popup-brand
+			a(href="#").auth-popup-brand__link
+				img(src="/upload/auth-brand4.jpg", alt="")
+
+		.auth-popup__main
+			.auth-popup__title Вход в личный кабинет
+
+			.auth-popup__text Введите телефон. На этот номер поступит смс с&nbsp;кодом подтверждения.
+
+			form.auth-form.js-auth-form
+				label.auth-form__item
+					input(name="phone", type="text", required="required", placeholder=" ", class="js-phone")
+
+					.auth-form__label Телефон
+
+					.auth-form__close.js-auth-form-close
+						+svg('ic-close','ic-close', '17', '17')
+
+				.auth-form__btn
+					input(type="submit", value="Войти").btn.btn_small
+
+			.auth-popup-social
+				.auth-popup-social__title или
+
+				.auth-popup-social__list
+					-
+						var list=[
+							{img:'ya.svg', text:'Вход с Яндекс ID'},
+							{img:'vk.svg', text:'Вход с VK ID'},
+							{img:'sber.svg', text:'Вход по Сбер ID'},
+							{img:'tbank.svg', text:'Вход по Тинькофф ID'},
+						]
+					each item in list
+						.auth-popup-social__item
+							a(href="#").auth-popup-social__link
+								span.auth-popup-social__icon
+									img(src="/upload/"+item.img, alt="")
+
+								span.auth-popup-social__label= item.text
+
+			.auth-popup__label Нажимая на кнопку, я соглашаюсь с правилами пользования торговой площадкой и политикой конфиденциальности.
+	
+	br
+	br
+	br
+	.auth-popup
+		.auth-popup-brand
+			a(href="#").auth-popup-brand__link
+				img(src="/upload/auth-brand5.jpg", alt="")
+
+		.auth-popup__main
+			.auth-popup__title Вход в личный кабинет
+
+			.auth-popup__text Введите телефон. На этот номер поступит смс с&nbsp;кодом подтверждения.
+
+			form.auth-form.js-auth-form
+				label.auth-form__item
+					input(name="phone", type="text", required="required", placeholder=" ", class="js-phone")
+
+					.auth-form__label Телефон
+
+					.auth-form__close.js-auth-form-close
+						+svg('ic-close','ic-close', '17', '17')
+
+				.auth-form__btn
+					input(type="submit", value="Войти").btn.btn_small
+
+			.auth-popup-social
+				.auth-popup-social__title или
+
+				.auth-popup-social__list
+					-
+						var list=[
+							{img:'ya.svg', text:'Вход с Яндекс ID'},
+							{img:'vk.svg', text:'Вход с VK ID'},
+							{img:'sber.svg', text:'Вход по Сбер ID'},
+							{img:'tbank.svg', text:'Вход по Тинькофф ID'},
+						]
+					each item in list
+						.auth-popup-social__item
+							a(href="#").auth-popup-social__link
+								span.auth-popup-social__icon
+									img(src="/upload/"+item.img, alt="")
+
+								span.auth-popup-social__label= item.text
+
+			.auth-popup__label Нажимая на кнопку, я соглашаюсь с правилами пользования торговой площадкой и политикой конфиденциальности.
+	

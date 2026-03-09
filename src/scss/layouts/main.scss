@@ -1,6 +1,7 @@
 :root{
 	--font-alssector: 'ALS-Sector', Arial, sans-serif;
 	--font-grotesk: 'Akzidenz-Grotesk Pro', Arial, sans-serif;
+	--font-abril: 'Abril Fatface', Arial, sans-serif;
 	--font-site: var(--font-alssector);
 	--font-header: var(--font-grotesk);
 
@@ -43,7 +44,7 @@ img{max-width: 100%;}
 a{
 	color: var(--color-link);
 	text-decoration: none;
-	transition: color 0.2s ease 0s;
+	transition: color 0.3s ease 0s;
 }
 
 a:hover{
@@ -151,14 +152,14 @@ button.btn{
 	gap: 22px;
 	height: 5.8rem;
 	background: var(--color-primary);
-	border: 2px solid var(--color-primary);
+	border: none;
 	border-radius: 6px;
 	@include font(normal, normal, 2rem, 1.2, #fff);
 	text-decoration: none;
 	text-align: center;
 	padding: 0 34px;
 	cursor: pointer;
-	transition: all 0.2s ease 0s;
+	transition: all 0.3s ease 0s;
 
 	.icon{
 		flex-shrink: 0;
@@ -168,44 +169,56 @@ button.btn{
 	.icon.ic-stroke{
 		fill: transparent;
 		stroke: #fff;
-		transition: all 0.2s ease 0s;
+		transition: all 0.3s ease 0s;
 	}
 
 	&:hover{
 		box-shadow: inset 0 -5.4em 0 0 var(--color-primary-hover);
-		color: var(--color-text);
-
-		// .icon{fill: var(--color-text);}
-
-		// .icon.ic-stroke{
-		// 	fill: transparent;
-		// 	stroke: var(--color-text);
-		// }
+		color: #fff;
+		text-decoration: none;
 	}
 
-	&_border{
-		background: transparent;
+	&_small{
+		height: 4.8rem;
+		font-size: 1.6rem;
+	}
+
+	&_white{
+		background: #fff;
+		border-color: #fff;
 		color: var(--color-primary);
 
-		.icon{fill: var(--color-primary);}
-
-		.icon.ic-stroke{
-			fill: transparent;
-			stroke: var(--color-primary);
+		&:hover{
+			box-shadow: inset 0 -5.4em 0 0 #e2a5a5;
+			color: var(--color-primary);
 		}
 	}
 
-	&_border:hover{
-		box-shadow: inset 0 -5.4em 0 0 var(--color-primary);
-		color: #fff;
 
-		.icon{fill: #fff;}
+	// &_border{
+	// 	background: transparent;
+		// border: 2px solid var(--color-primary);
+	// 	color: var(--color-primary);
 
-		.icon.ic-stroke{
-			fill: transparent;
-			stroke: #fff;
-		}
-	}
+	// 	.icon{fill: var(--color-primary);}
+
+	// 	.icon.ic-stroke{
+	// 		fill: transparent;
+	// 		stroke: var(--color-primary);
+	// 	}
+	// }
+
+	// &_border:hover{
+	// 	box-shadow: inset 0 -5.4em 0 0 var(--color-primary);
+	// 	color: #fff;
+
+	// 	.icon{fill: #fff;}
+
+	// 	.icon.ic-stroke{
+	// 		fill: transparent;
+	// 		stroke: #fff;
+	// 	}
+	// }
 }
 
 .st-width{
@@ -250,3 +263,12 @@ button.btn{
 .text-uppercase{text-transform: uppercase !important;}
 .text-bold {font-weight: 700 !important;}
 .text-color {color: var(--color-primary) !important;}
+
+@media (max-width: 991px) {
+	.btn,
+	input[type="submit"].btn,
+	button.btn{
+		height: 5.2rem;
+		font-size: 1.6rem;
+	}
+}

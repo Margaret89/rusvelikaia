@@ -19,7 +19,7 @@
 		outline: 0;
 		margin: 0;
 		box-shadow: none;
-		transition: border 0.2s ease 0s;
+		transition: border 0.3s ease 0s;
 	}
 
 	input[type="text"]:focus,
@@ -36,7 +36,7 @@
 	
 	input[type="submit"],
 	button{
-		display: inline-flex;
+		display: flex;
 		align-items: center;
 		justify-content: center;
 		width: 62px;
@@ -55,7 +55,7 @@
 		cursor: pointer;
 		transition: all 0.3s ease 0s;
 
-		.icon{transition: color 0.2s ease 0s;}
+		.icon{transition: color 0.3s ease 0s;}
 
 		&:hover{background: var(--color-primary-hover);}
 	}

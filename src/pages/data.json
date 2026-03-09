@@ -4,6 +4,10 @@
 			"href": "main.html",
 			"title":"Главная"
 		},
+		"auth":{
+			"href": "auth.html",
+			"title":"Авторизация"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",
