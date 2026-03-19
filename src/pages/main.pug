@@ -1,0 +1,39 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'main'
+
+block body
+	section.page-logo
+		img(src="/upload/logo-index.svg", alt="")
+	
+	section.main-slider-wrap
+		.swiper.main-slider.js-main-slider
+			.swiper-wrapper
+				-
+					var list=[
+						{
+							link:'/mezhdunarodnyj-zhenskij-den/',
+							img:'main-slider1.jpg',
+							imgmob:'main-slider-mobile1.jpg',
+							text:'Подарки на 8 Марта для милых дам!'
+						},
+						{
+							link:'/asfour-crystal/',
+							img:'main-slider2.jpg',
+							imgmob:'main-slider-mobile2.jpg',
+							text:'Интерьерная коллекция скульптур, статуэток и фигурок от Asfour Crystal'
+						},
+					]
+				each item in list
+					.swiper-slide.main-slider__item
+						a(href=item.link).main-slider__link
+							picture
+								source(media="(max-width: 768px)", srcset="/upload/"+item.imgmob)
+								img(src="/upload/"+item.img, alt=item.text)
+
+			.swiper-button-prev.js-z-slider-prev
+				+svg('ic-arrow-left','ic-arrow-left', '13', '12')
+			
+			.swiper-button-next.js-main-slider-next
+				+svg('ic-arrow-right','ic-arrow-right', '13', '12')

@@ -8,6 +8,14 @@
 			"href": "auth.html",
 			"title":"Авторизация"
 		},
+		"mobile-sidebar":{
+			"href": "mobile-sidebar.html",
+			"title":"Мобильное меню"
+		},
+		"catalod-detail":{
+			"href": "catalod-detail.html",
+			"title":"Каталог детальная"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",

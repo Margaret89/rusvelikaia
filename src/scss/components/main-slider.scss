@@ -1,0 +1,16 @@
+/*-------------- main-slider -----------------*/
+.main-slider{
+	.swiper-button-prev,
+	.swiper-button-next{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		padding: 0 30px;
+		position: absolute;
+		top: 0;
+	}
+
+	.swiper-button-prev{left: 0;}
+	.swiper-button-next{right: 0;}
+}

@@ -1,0 +1,247 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'mobile-sidebar'
+
+block body
+	.mobile-sidebar-page
+		.mobile-sidebar
+			.mobile-sidebar__bg
+
+			.mobile-sidebar__content
+				.mobile-sidebar__top
+					.mobile-sidebar__title Каталог продукции
+
+					.mobile-sidebar__close.js-close-mobile-sidebar
+						.ic-hamburger.active
+							span
+
+				ul.mobile-menu
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Категории
+
+						ul.mobile-menu__sub
+							-
+								var list=[
+									{icon:'ic-vase', icon_width:'23', icon_height:'35', text:'Интерьерные изделия'},
+									{icon:'ic-bell', icon_width:'28', icon_height:'36', text:'Коллекционирование'},
+									{icon:'ic-pen', icon_width:'21', icon_height:'33', text:'Настольные принадлежности'},
+									{icon:'ic-chess', icon_width:'19', icon_height:'32', text:'Настольные игры'},
+									{icon:'ic-plane', icon_width:'34', icon_height:'34', text:'Хобби'},
+									{icon:'ic-sword', icon_width:'28', icon_height:'28', text:'Сувенирное оружие'},
+									{icon:'ic-religion', icon_width:'15', icon_height:'40', text:'Религиозные подарки'},
+									{icon:'ic-dishes', icon_width:'32', icon_height:'27', text:'Посуда'},
+									{icon:'ic-crown-stroke', icon_width:'32', icon_height:'22', text:'Сувениры'},
+									{icon:'ic-matryoshka', icon_width:'23', icon_height:'33', text:'Русские подарки'},
+									{icon:'ic-kokoshnik', icon_width:'31', icon_height:'33', text:'Русский народный костюм'},
+									{icon:'ic-ring', icon_width:'23', icon_height:'32', text:'Украшения'},
+									{icon:'ic-present', icon_width:'27', icon_height:'32', text:'Подарочная упаковка'},
+									{icon:'ic-knife', icon_width:'30', icon_height:'32', text:'Сувенирные ножи'},
+									{icon:'ic-toy', icon_width:'24', icon_height:'32', text:'Аксессуары'},
+
+								]
+							each item in list
+								li.mobile-menu__sub-item
+									a(href="#").mobile-menu__sub-link
+										.mobile-menu__sub-icon
+											+svg(item.icon, item.icon, item.icon_width, item.icon_height)
+
+										.mobile-menu__sub-text= item.text
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Какой праздник
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Для кого
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Материал
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Стили
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Бренды
+
+				.mobile-sidebar-auth
+					.mobile-sidebar-auth__sale 5%
+
+					.mobile-sidebar-auth__text
+						a(href="#") Войдите в личный кабинет
+						br
+						|и получите приветственную скидку на&nbsp;все покупки.
+
+					.mobile-sidebar-auth__icon
+						+svg('ic-crown','ic-crown', '21', '19')
+
+					a(href="#").btn.btn_light Вход в личный кабинет
+
+				ul.mobile-menu-add
+					-
+						var list=[
+							{text:'О нас'},
+							{text:'Доставка и оплата'},
+							{text:'Магазины '},
+							{text:'Контакты'},
+						]
+					each item in list
+						li.mobile-menu-add__item
+							a(href="#").mobile-menu-add__link= item.text
+
+				.mobile-sidebar__contacts
+					.mobile-sidebar-metro
+						.mobile-sidebar-metro__icon
+							+svg('ic-metro','ic-metro', '32', '23')
+
+						.mobile-sidebar-metro__text Курская
+
+					.mobile-sidebar__address ул. Верхняя Сыромятническая, д. 2
+
+					.mobile-sidebar__phone
+						a(href="tel:+74952231105") +7 495 223-11-05
+
+					a(href="#").btn.btn_white Заказать звонок
+
+					.social
+						.social__list
+							a(href="#").social__item
+								+svg('ic-dzen','ic-dzen', '27', '27')
+
+							a(href="#").social__item
+								+svg('ic-vk','ic-vk', '30', '19')
+
+							a(href="#").social__item
+								+svg('ic-rutube','ic-rutube', '30', '26')
+
+							a(href="#").social__item
+								+svg('ic-telegram','ic-telegram', '28', '23')
+		
+		.mobile-sidebar
+			.mobile-sidebar__bg
+
+			.mobile-sidebar__content
+				.mobile-sidebar__top
+					.mobile-sidebar__title Каталог продукции
+
+					.mobile-sidebar__close.js-close-mobile-sidebar
+						.ic-hamburger.active
+							span
+
+				ul.mobile-menu
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Категории
+
+						ul.mobile-menu__sub
+							-
+								var list=[
+									{icon:'ic-vase', icon_width:'23', icon_height:'35', text:'Интерьерные изделия'},
+									{icon:'ic-bell', icon_width:'28', icon_height:'36', text:'Коллекционирование'},
+									{icon:'ic-pen', icon_width:'21', icon_height:'33', text:'Настольные принадлежности'},
+									{icon:'ic-chess', icon_width:'19', icon_height:'32', text:'Настольные игры'},
+									{icon:'ic-plane', icon_width:'34', icon_height:'34', text:'Хобби'},
+									{icon:'ic-sword', icon_width:'28', icon_height:'28', text:'Сувенирное оружие'},
+									{icon:'ic-religion', icon_width:'15', icon_height:'40', text:'Религиозные подарки'},
+									{icon:'ic-dishes', icon_width:'32', icon_height:'27', text:'Посуда'},
+									{icon:'ic-crown-stroke', icon_width:'32', icon_height:'22', text:'Сувениры'},
+									{icon:'ic-matryoshka', icon_width:'23', icon_height:'33', text:'Русские подарки'},
+									{icon:'ic-kokoshnik', icon_width:'31', icon_height:'33', text:'Русский народный костюм'},
+									{icon:'ic-ring', icon_width:'23', icon_height:'32', text:'Украшения'},
+									{icon:'ic-present', icon_width:'27', icon_height:'32', text:'Подарочная упаковка'},
+									{icon:'ic-knife', icon_width:'30', icon_height:'32', text:'Сувенирные ножи'},
+									{icon:'ic-toy', icon_width:'24', icon_height:'32', text:'Аксессуары'},
+
+								]
+							each item in list
+								li.mobile-menu__sub-item
+									a(href="#").mobile-menu__sub-link
+										.mobile-menu__sub-icon
+											+svg(item.icon, item.icon, item.icon_width, item.icon_height)
+
+										.mobile-menu__sub-text= item.text
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Какой праздник
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Для кого
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Материал
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Стили
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Бренды
+
+				.mobile-sidebar-lk
+					.mobile-sidebar-lk__content
+						.mobile-sidebar-lk__top
+							.mobile-sidebar-lk__icon
+								+svg('ic-crown','ic-crown', '21', '19')
+							
+							.mobile-sidebar-lk__title Личный кабинет
+						
+						ul.sidebar-lk-menu
+							-
+								var list=[
+									{text:'Личные данные'},
+									{text:'Адреса доставки'},
+									{text:'Бонусная система'},
+									{text:'Промокоды', count:'2'},
+									{text:'Истрия заказов'},
+									{text:'Избранное'},
+								]
+							each item in list
+								li.sidebar-lk-menu__item
+									a(href="#").sidebar-lk-menu__link= item.text
+										if(item.count)
+											.sidebar-count= item.count
+
+						.mobile-sidebar-lk__bottom
+							.mobile-sidebar-lk__callback
+								a(href="#") Обратная связь
+									span.sidebar-count 3
+
+					.mobile-sidebar-lk__exit
+						a(href="#") Выйти из ЛК
+					
+				ul.mobile-menu-add
+					-
+						var list=[
+							{text:'О нас'},
+							{text:'Доставка и оплата'},
+							{text:'Магазины '},
+							{text:'Контакты'},
+						]
+					each item in list
+						li.mobile-menu-add__item
+							a(href="#").mobile-menu-add__link= item.text
+
+				.mobile-sidebar__contacts
+					.mobile-sidebar-metro
+						.mobile-sidebar-metro__icon
+							+svg('ic-metro','ic-metro', '32', '23')
+
+						.mobile-sidebar-metro__text Курская
+
+					.mobile-sidebar__address ул. Верхняя Сыромятническая, д. 2
+
+					.mobile-sidebar__phone
+						a(href="tel:+74952231105") +7 495 223-11-05
+
+					a(href="#").btn.btn_white Заказать звонок
+
+					.social
+						.social__list
+							a(href="#").social__item
+								+svg('ic-dzen','ic-dzen', '27', '27')
+
+							a(href="#").social__item
+								+svg('ic-vk','ic-vk', '30', '19')
+
+							a(href="#").social__item
+								+svg('ic-rutube','ic-rutube', '30', '26')
+
+							a(href="#").social__item
+								+svg('ic-telegram','ic-telegram', '28', '23')

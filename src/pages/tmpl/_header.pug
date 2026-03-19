@@ -40,11 +40,568 @@ header.header
 				source(srcset="/upload/logo-word.svg", media="(max-width: 992px)")
 				img(src="/upload/logo.svg", alt="Логотип")
 
+		.header-main__btn.js-open-mobile-sidebar
+			.ic-hamburger
+				span
+		
+		#mobile-sidebar.mobile-sidebar.js-mobile-sidebar
+			.mobile-sidebar__bg
+
+			.mobile-sidebar__content
+				.mobile-sidebar__top
+					.mobile-sidebar__title Каталог продукции
+
+					.mobile-sidebar__close.js-close-mobile-sidebar
+						.ic-hamburger.active
+							span
+
+				ul.mobile-menu
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Категории
+
+						ul.mobile-menu__sub
+							-
+								var list=[
+									{icon:'ic-vase', icon_width:'23', icon_height:'35', text:'Интерьерные изделия'},
+									{icon:'ic-bell', icon_width:'28', icon_height:'36', text:'Коллекционирование'},
+									{icon:'ic-pen', icon_width:'21', icon_height:'33', text:'Настольные принадлежности'},
+									{icon:'ic-chess', icon_width:'19', icon_height:'32', text:'Настольные игры'},
+									{icon:'ic-plane', icon_width:'34', icon_height:'34', text:'Хобби'},
+									{icon:'ic-sword', icon_width:'28', icon_height:'28', text:'Сувенирное оружие'},
+									{icon:'ic-religion', icon_width:'15', icon_height:'40', text:'Религиозные подарки'},
+									{icon:'ic-dishes', icon_width:'32', icon_height:'27', text:'Посуда'},
+									{icon:'ic-crown-stroke', icon_width:'32', icon_height:'22', text:'Сувениры'},
+									{icon:'ic-matryoshka', icon_width:'23', icon_height:'33', text:'Русские подарки'},
+									{icon:'ic-kokoshnik', icon_width:'31', icon_height:'33', text:'Русский народный костюм'},
+									{icon:'ic-ring', icon_width:'23', icon_height:'32', text:'Украшения'},
+									{icon:'ic-present', icon_width:'27', icon_height:'32', text:'Подарочная упаковка'},
+									{icon:'ic-knife', icon_width:'30', icon_height:'32', text:'Сувенирные ножи'},
+									{icon:'ic-toy', icon_width:'24', icon_height:'32', text:'Аксессуары'},
+
+								]
+							each item in list
+								li.mobile-menu__sub-item
+									a(href="#").mobile-menu__sub-link
+										.mobile-menu__sub-icon
+											+svg(item.icon, item.icon, item.icon_width, item.icon_height)
+
+										.mobile-menu__sub-text= item.text
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Какой праздник
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Для кого
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Материал
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Стили
+
+					li.mobile-menu__item
+						a(href="#").mobile-menu__link Бренды
+
+				.mobile-sidebar-auth
+					.mobile-sidebar-auth__sale 5%
+
+					.mobile-sidebar-auth__text
+						a(href="#") Войдите в личный кабинет
+						br
+						|и получите приветственную скидку на&nbsp;все покупки.
+
+					.mobile-sidebar-auth__icon
+						+svg('ic-crown','ic-crown', '21', '19')
+
+					a(href="#").btn.btn_light Вход в личный кабинет
+
+				ul.mobile-menu-add
+					-
+						var list=[
+							{text:'О нас'},
+							{text:'Доставка и оплата'},
+							{text:'Магазины '},
+							{text:'Контакты'},
+						]
+					each item in list
+						li.mobile-menu-add__item
+							a(href="#").mobile-menu-add__link= item.text
+
+				.mobile-sidebar__contacts
+					.mobile-sidebar-metro
+						.mobile-sidebar-metro__icon
+							+svg('ic-metro','ic-metro', '32', '23')
+
+						.mobile-sidebar-metro__text Курская
+
+					.mobile-sidebar__address ул. Верхняя Сыромятническая, д. 2
+
+					.mobile-sidebar__phone
+						a(href="tel:+74952231105") +7 495 223-11-05
+
+					a(href="#").btn.btn_white Заказать звонок
+
+					.social
+						.social__list
+							a(href="#").social__item
+								+svg('ic-dzen','ic-dzen', '27', '27')
+
+							a(href="#").social__item
+								+svg('ic-vk','ic-vk', '30', '19')
+
+							a(href="#").social__item
+								+svg('ic-rutube','ic-rutube', '30', '26')
+
+							a(href="#").social__item
+								+svg('ic-telegram','ic-telegram', '28', '23')
+
 		.catalog-menu
-			.catalog-menu__btn
+			a(href="#", data-fancybox, data-src="#catalog-menu-popup").catalog-menu__btn
 				.ic-hamburger
 					span
 				span.catalog-menu__btn-label Каталог
+
+			#catalog-menu-popup.catalog-menu-popup(style="display:none;")
+				.catalog-menu-popup__top
+					.catalog-menu-popup__title Каталог продукции
+					.catalog-menu-popup__sale 5%
+					.catalog-menu-popup__text
+						a(href="#") Войдите в личный кабинет
+						| 
+						|и получите приветственную скидку на все покупки
+
+				.catalog-menu-popup__main
+					.catalog-menu-popup__sidebar
+						ul.catalog-menu-sect
+							-
+								var list=[
+									{text:'Категории', status:'active'},
+									{text:'Какой праздник'},
+									{text:'Для кого'},
+									{text:'Материал'},
+									{text:'Стили'},
+									{text:'Бренды'},
+								]
+							each item, index in list
+								li.catalog-menu-sect__item.js-catalog-menu-sect-item(data-id='menu-sect-'+index, class=item.status?' active':'')
+									.catalog-menu-sect__name= item.text
+							
+							li.catalog-menu-sect__item.catalog-menu-sect__item_line
+								a(href="#").catalog-menu-sect__link
+									+svg('ic-sale','ic-sale', '18', '13')
+									|Распродажа
+
+						.catalog-menu-info
+							a(href="#")
+								img(src="/upload/ban_menu1.jpg", alt="")
+
+					.catalog-menu-popup__content
+						.catalog-menu-popup__sect.js-catalog-menu-popup-sect.active(data-id='menu-sect-0')
+							ul.catalog-menu-list
+								-
+									var list=[
+										{
+											text:'Интерьерные изделия',
+											sub:[
+												{text:'Бюсты'},
+												{text:'Вазы'},
+												{text:'Декоративные тарелки'},
+												{text:'Денежные деревья'},
+												{text:'Зеркала'},
+												{text:'Канделябры'},
+												{text:'Картины'},
+												{text:'Ключницы'},
+												{text:'Лампы'},
+												{text:'Метеостанция'},
+												{text:'Меховые покрытия'},
+												{text:'Мини-бары'},
+												{text:'Новогодние композиции'},
+												{text:'Офорты'},
+												{text:'Панно'},
+												{text:'Подсвечники'},
+												{text:'Сейфы'},
+												{text:'Статуэтки'},
+												{text:'Цветы'},
+												{text:'Часы'},
+												{text:'Чучела'},
+												{text:'Шкатулки'},
+												{text:'Шкуры'},
+												{text:'Рамы для картин'},
+												{text:'Сувениры из янтаря собственного производства'},
+												{text:'Другое'},
+											]
+										},
+										{
+											text:'Коллекционирование',
+											sub:[
+												{text:'Колокольчики'},
+												{text:'Куклы'},
+												{text:'Модели оружия'},
+												{text:'Модели техники'},
+												{text:'Наперстки'},
+												{text:'Ордена и медали'},
+												{text:'Солдатики'},
+												{img:'present-books.jpg'}
+											]
+										},
+										{
+											text:'Настольные принадлежности',
+											sub:[
+												{text:'Флэшки'},
+												{text:'Визитницы'},
+												{text:'Ежедневники'},
+												{text:'Карандашницы'},
+												{text:'Лупы'},
+												{text:'Настольные наборы'},
+												{text:'Ножи для бумаг'},
+												{text:'Оснастки под печать'},
+												{text:'Подставки для телефонов'},
+												{text:'Подставки под ручки'},
+												{text:'Пресс папье'},
+												{text:'Ручки'},
+												{text:'Фоторамки'},
+												{text:'Другое'},
+											]
+										},
+										{
+											text:'Настольные игры',
+											sub:[
+												{text:'Домино'},
+												{text:'Карты игральные'},
+												{text:'Лото'},
+												{text:'Нарды'},
+												{text:'Шахматы'},
+												{text:'Шашки'},
+												{text:'Кии для бильярда'},
+												{text:'Другие'},
+												{img:'amber-products.jpg'}
+											]
+										},
+										{
+											text:'Хобби',
+											sub:[
+												{text:'Зажигалки'},
+												{text:'Книги'},
+												{text:'Наборы для пикника'},
+												{text:'Пепельницы'},
+												{text:'Шампуры'},
+												{text:'Наборы для чистки оружия'},
+												{text:'Футляры для бутылок'},
+												{text:'Другое'},
+											]
+										},
+										{
+											text:'Сувенирное оружие',
+											sub:[
+												{text:'Кинжалы'},
+												{text:'Кортики'},
+												{text:'Ножи'},
+												{text:'Палаши'},
+												{text:'Сабли'},
+												{text:'Стилеты'},
+												{text:'Топоры'},
+												{text:'Шашки казачьи'},
+												{text:'Другое'},
+											]
+										},
+										{
+											text:'Религиозные подарки',
+											sub:[
+												{text:'Храмы'},
+												{text:'Мечети'},
+												{text:'Иконы'},
+												{text:'Пасхальные яйца'},
+												{text:'Священные писания'},
+												{text:'Церковные платки'},
+												{text:'Религиозная скульптура'},
+												{text:'Четки'},
+												{img:'imperial-porcelain.jpg'}
+											]
+										},
+										{
+											text:'Посуда',
+											sub:[
+												{text:'Братины'},
+												{text:'Бокалы'},
+												{text:'Блюда и блюдца'},
+												{text:'Ведра для шампанского'},
+												{text:'Графины'},
+												{text:'Доски разделочные'},
+												{text:'Икорницы'},
+												{text:'Ионизаторы для воды'},
+												{text:'Конфетницы'},
+												{text:'Кофейники'},
+												{text:'Кофейные пары'},
+												{text:'Кружки'},
+												{text:'Кубки'},
+												{text:'Кувшины'},
+												{text:'Масленки'},
+												{text:'Наборы для специй'},
+												{text:'Пасхальницы'},
+												{text:'Питейные наборы'},
+												{text:'Подносы'},
+												{text:'Подстаканники'},
+												{text:'Рюмки'},
+												{text:'Салатники'},
+												{text:'Сахарницы'},
+												{text:'Сервизы'},
+												{text:'Сливочники'},
+												{text:'Соусники'},
+												{text:'Стаканы'},
+												{text:'Столовые приборы'},
+												{text:'Стопки'},
+												{text:'Тарелки'},
+												{text:'Термосы'},
+												{text:'Фляги'},
+												{text:'Фруктовницы'},
+												{text:'Чайники'},
+												{text:'Чайные пары'},
+												{text:'Штопоры'},
+												{text:'Штофы'},
+												{text:'Чашки'},
+												{text:'Другое'},
+												{img:'gzhel.jpg'}
+											]
+										},
+										{
+											text:'Сувениры',
+											sub:[
+												{text:'Новогодние украшения'},
+												{text:'Брелоки'},
+												{text:'Лазерная графика'},
+												{text:'Магниты'},
+												{text:'Монеты'},
+												{text:'Сувенирные тарелки'},
+											]
+										},
+										{
+											text:'Русские подарки',
+											sub:[
+												{text:'Матрешки'},
+												{text:'Одежда с русской символикой'},
+												{text:'Палантины'},
+												{text:'Платки'},
+												{text:'Русские игрушки'},
+												{text:'Самовары'},
+												{text:'Сувениры'},
+												{text:'Кашне'},
+												{text:'Куклы-грелки'},
+												{text:'Гжель'},
+												{text:'Хохлома'},
+												{text:'Златоуст'},
+												{text:'Жостово'},
+												{text:'Федоскино'},
+												{text:'Палех'},
+											]
+										},
+										{
+											text:'Русский народный костюм',
+											sub:[
+												{text:'Кокошники'},
+												{text:'Косоворотки'},
+												{text:'Сарафаны'},
+											]
+										},
+										{
+											text:'Украшения',
+											sub:[
+												{text:'Браслеты'},
+												{text:'Броши'},
+												{text:'Бусы'},
+												{text:'Колье'},
+												{text:'Кольца'},
+												{text:'Кулоны и подвески'},
+												{text:'Серьги'},
+											]
+										},
+										{text:'Подарочная упаковка'},
+										{text:'Сувенирные ножи'},
+										{
+											text:'Аксессуары',
+											sub:[
+												{text:'Визитницы карманные'},
+												{text:'Зажимы для денег'},
+												{text:'Зеркала карманные'},
+												{text:'Ложки для обуви'},
+												{text:'Наручные часы'},
+												{text:'Обложки для документов'},
+												{text:'Портсигары'},
+												{text:'Расчески для волос'},
+												{text:'Сумки'},
+												{text:'Таблетницы'},
+												{text:'Косметички'},
+												{text:'Футляры для очков'},
+												{text:'Чехлы для телефонов'},
+											]
+										},
+									]
+								each item in list
+									li.catalog-menu-list__item
+										a(href="#").catalog-menu-list__link= item.text
+
+										if(item.sub)
+											ul.catalog-menu-list__sub
+												each sub in item.sub
+													li.catalog-menu-list__sub-item
+														if(sub.text)
+															a(href="#").catalog-menu-list__sub-link= sub.text
+
+														if(sub.img)
+															a(href="#").catalog-menu-list__img
+																img(src="/upload/"+sub.img, alt="")
+		
+						.catalog-menu-popup__sect.js-catalog-menu-popup-sect(data-id='menu-sect-1')
+							.event-list
+								-
+									var list=[
+										{img:'texture-new-year.jpg', title:'1 января', text:'Новый год'},
+										{img:'christmas.jpg', title:'7 января', text:'Рождество'},
+										{img:'february-23.jpg', title:'23 февраля', text:'День защитника отечества'},
+										{img:'march-8.jpg', title:'8 марта', text:'Международный женский день'},
+										{img:'easter.jpg', title:'19 апреля', text:'Пасха'},
+										{img:'may-9.jpg', title:'9 мая', text:'День победы'},
+										{img:'paratrooper.jpg', title:'2 августа', text:'День десантника'},
+										{img:'builder.jpg', title:'11 августа', text:'День строителя'},
+										{img:'vvf.jpg', title:'12 августа', text:'День Военно-воздушных сил России'},
+									]
+								each item in list
+									a(href="#").event-item
+										.event-item__img-wrap
+											.event-item__img
+												img(src="/upload/"+item.img, alt="")
+
+										.event-item__title= item.title
+										.event-item__text= item.text
+
+
+						.catalog-menu-popup__sect.js-catalog-menu-popup-sect(data-id='menu-sect-2')
+							.info-cards
+								.info-cards__sect
+									.info-cards__title Близкие, родные, любимые
+
+									.info-cards__list
+										-
+											var list=[
+												{img:'c90bcc07dd84cca34e89acf4dd3d02bf.jpg', title:'Мужчине', count:'313 изделий'},
+												{img:'2a7eb3ca843e26938dc4871f35b2fe0b.jpg', title:'Женщине', count:'1055 изделий'},
+												{title:'Бабушке', count:'956 изделий'},
+												{title:'Дедушке', count:'114 изделий'},
+												{title:'Матери', count:'942 изделия'},
+												{title:'Отцу', count:'109 изделий'},
+												{title:'Брату', count:'96 изделий'},
+												{title:'Сестре', count:'952 изделия'},
+												{title:'Девушке', count:'949 изделий'},
+												{title:'Парню', count:'91 изделие'},
+												{title:'Родителям', count:'18 изделий'},
+												{title:'Молодожёнам', count:'6 изделий'},
+											]
+										each item in list
+											a(href="#").info-card
+												span.info-card__img(style="background-image: url(/upload/"+item.img+")")
+
+												span.info-card__content
+													span.info-card__title= item.title
+													span.info-card__count= item.count
+								
+								.info-cards__sect
+									.info-cards__title По статусу
+
+									.info-cards__list
+										-
+											var list=[
+												{img:'4e8151291c033483d99a0ef0baa26a2b.png', title:'Руководителю', count:'371 изделие'},
+												{img:'510699958727109156d4e6e374246352.webp', title:'Офицеру', count:'81 изделие'},
+												{img:'589aa6fe68799fc426363838fcd108f3.webp', title:'Начальнику', count:'372 изделия'},
+												{img:'7ecd954136d7c9d74343f988a665c595.webp', title:'Боссу', count:'369 изделий'},
+												{img:'9ed4b08c87473595e496c01a3557e5a9.webp', title:'Шефу', count:'367 изделий'},
+												{img:'c6a2ff733ad476e150d053d7dafcc428.webp', title:'Директору', count:'363 изделия'},
+												{img:'2c6661d1d8d4de44e5db87a1c3dd36fa.webp', title:'Иностранец', count:'89 изделий'},
+												{img:'365e44d208adfe695e771173eb9ef461.webp', title:'Чиновник', count:'71 изделие'},
+												{img:'be91fdf0dd755c2d5edccc5085b5bde4.webp', title:'Бизнес-партер', count:'67 изделий'},
+												{img:'e6a891186160e52d114cf8392bd3edb5.webp', title:'Олигарх', count:'49 изделий'},
+											]
+										each item in list
+											a(href="#").info-card
+												span.info-card__img(style="background-image: url(/upload/"+item.img+")")
+
+												span.info-card__content
+													span.info-card__title= item.title
+													span.info-card__count= item.count
+
+						.catalog-menu-popup__sect.js-catalog-menu-popup-sect(data-id='menu-sect-3')
+							.kaleidoscope-popup
+								-
+									var list=[
+										{img:'81c44b71ba0dfab1fa81d3986c1d55e1.png', text:'Камень'},
+										{img:'8051a6eef8ac24d6fcf3405c87a52970.png', text:'Дерево'},
+										{img:'bb4812cd1ba7925f348fbae4beb68595.png', text:'Металл'},
+										{img:'baca8d312ef05a3e667f5513f7bee307.png', text:'Хрусталь'},
+										{img:'9c8f0b4487a85a759c1e0fd7b5610228.png', text:'Стекло'},
+										{img:'130c38b9d5ab0fde76fffba99b3f9eb3.png', text:'Янтарь'},
+										{img:'7c854614fc0db5a0d22812143f2a7e57.png', text:'Текстиль'},
+										{img:'a7cdf14191086e2b96b45d577242f258.png', text:'Кость'},
+										{img:'0a34007ba0652fbe4197b24c8d19dfbc.png', text:'Фарфор'},
+									]
+								each item in list
+									a(href="#").kaleidoscope-popup-item
+										span.kaleidoscope-popup-item__img(style="background-image: url(/upload/"+item.img+")")
+
+										span.kaleidoscope-popup-item__label= item.text
+
+						.catalog-menu-popup__sect.js-catalog-menu-popup-sect(data-id='menu-sect-4')
+							.kaleidoscope-popup
+								-
+									var list=[
+										{img:'ac653c1981aa134442eae0d10afe98f5.webp', text:'Гжель'},
+										{img:'a5e06d0f912d59034af05b6621dfed84.webp', text:'Хохлома'},
+										{img:'7af8c9ce0e2dae629d48f4ee9385228c.webp', text:'Златоуст'},
+										{img:'b5f6dd7e47a2fcccc894305853eb8e8b.webp', text:'Жостово'},
+										{img:'846e27f67b2daf7b12f77a8f899373a2.webp', text:'Палех'},
+										{img:'25361fbb02ec55eee6f2ab7a801fb071.webp', text:'Финифть'},
+										{img:'fd04ec448062c8e433ebdb2e4d01ee7c.webp', text:'Холуй'},
+										{img:'4e38ea1465676e54c39b55d5e55dbcdb.webp', text:'Русский Лубок'},
+										{img:'8sp0j6tkbg6bd0udu7dughwrp8fz947e.webp', text:'Фаберже'},
+										{img:'czivjug2z1l21cbifcyj4vigvh1zvqkm.webp', text:'Хатам Кари'},
+									]
+								each item in list
+									a(href="#").kaleidoscope-popup-item
+										span.kaleidoscope-popup-item__img(style="background-image: url(/upload/"+item.img+")")
+
+										span.kaleidoscope-popup-item__label= item.text
+
+
+						.catalog-menu-popup__sect.js-catalog-menu-popup-sect(data-id='menu-sect-5')
+							.brands
+								-
+									var list=[
+										{img:'brand1.png', title:'Императорский фарфор', count:'482', text:'Императорский фарфоровый завод – одно из старейших фарфоровых предприятий в мире и крупнейший отечественный производитель фарфора. С 1744 года предприятие творит фарфоровую историю России, создавая в фарфоре – таком хрупком, но таком вечном – летопись важнейших событий из жизни нашей страны.'},
+										{img:'brand2.png', title:'Северная чернь', count:'42', text:'Народный художественный промысел, сложившийся в XVII веке в Великом Устюге. Уникальное историческое наследие. Ручной труд по традиционной технологии. Художественная ценность, заслужившая славу и призвание. Все изделия изготавливаются вручную по старинной технологии.'},
+										{img:'brand3.png', title:'Кольчугинский мельхиор', count:'74', text:'Крупнейший производитель подстаканников, столовых приборов, посуды и сувениров из мельхиора и меди. В 1922 году на заводе начался выпуск самоваров, примусов, а вскоре после ВОВ запустили выпуск никелированных чайников и освоили технологию нанесения покрытия из драгоценных металлов.'},
+										{img:'brand4.png', title:'Торжокские золотошвеи', count:'118', text:'Город Торжок является центром традиционного бытования золотошвейного искусства. Новоторжская золотная вышивка - уникальный народный художественный промысел с глубокими историческими корнями.'},
+										{img:'brand5.png', title:'Римский мастер', count:'95', text:'Компания использует собственные производственные площади, оснащённые современным европейским оборудованием. Перед началом работы специалисты визуализируют модели архитектурных форм и арт-объектов с использованием технологии дополненной реальности.'},
+										{img:'brand6.png', title:'Русские в моде', count:'128', text:'«Русские в моде» — бренд аксессуаров и дизайнерское бюро, основанное дизайнером Ниной Ручкиной в 2010 году. Предприятие относится к Модному дому Nina Ruchkina. Флагманским продуктом являются платки, также производится линия аксессуаров и сувениров — блокноты, зонты, броши.'},
+									]
+								each item in list
+									.brand-item
+										.brand-item__img
+											img(src="/upload/"+item.img, alt="")
+
+										.brand-item__content
+											.brand-item__title= item.title
+
+											.brand-item__info
+												.brand-item__count= item.count
+
+												.brand-item__label
+													|товарных
+													br
+													|позиции
+
+											.brand-item__text= item.text
+
+											.brand-item__links
+												a(href="#") О бренде
+												a(href="#") В каталог продукции
 
 		form.search-form
 			input(type="text", placeholder="Поиск по каталогу")

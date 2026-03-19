@@ -1,0 +1,38 @@
+/*-------------- kaleidoscope-popup -----------------*/
+.kaleidoscope-popup{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+
+.kaleidoscope-popup-item{
+	display: block;
+	text-decoration: none;
+	color: #fff;
+
+	&__img{
+		display: block;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		margin-bottom: 20px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		transition: transform 0.4s ease;
+	}
+
+	&__label{
+		display: block;
+		max-width: 125px;
+		font-size: 1.4rem;
+		color: #fff;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&:hover{text-decoration: underline;}
+	&:hover &__img{transform: rotate(30deg);}
+}
