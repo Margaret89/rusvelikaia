@@ -16,6 +16,10 @@
 			"href": "catalod-detail.html",
 			"title":"Каталог детальная"
 		},
+		"catalod-detail-white":{
+			"href": "catalod-detail-white.html",
+			"title":"Каталог детальная (белая страницв)"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",

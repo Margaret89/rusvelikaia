@@ -40,3 +40,36 @@
 	font-style: normal;
 	font-display: swap;
 }
+
+// Abhaya Libre
+@font-face {
+	font-family: 'Abhaya Libre';
+	src: local('Abhaya Libre Extrabold'), local('Abhaya-Libre-Extrabold'),
+		url('../fonts/abhayaLibre/abhaya_libre_extrabold.woff2') format('woff2'),
+		url('../fonts/abhayaLibre/abhaya_libre_extrabold.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+// Florentia
+@font-face {
+	font-family: 'Florentia';
+	src: local('Florentia Regular'), local('Florentia-Regular'),
+		url('../fonts/florentia/florentia-regular.woff2') format('woff2'),
+		url('../fonts/florentia/abhaya_libre_extrabold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+// oranienbaum
+@font-face {
+	font-family: 'Oranienbaum';
+	src: local('Oranienbaum'),
+		url('../fonts/oranienbaum/oranienbaum.woff2') format('woff2'),
+		url('../fonts/oranienbaum/oranienbaum.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

@@ -36,9 +36,14 @@ header.header
 
 	.header-main
 		.header-main__logo
-			picture
-				source(srcset="/upload/logo-word.svg", media="(max-width: 992px)")
-				img(src="/upload/logo.svg", alt="Логотип")
+			if(bgWhite)
+				picture
+					source(srcset="/upload/logo-word-dark.svg", media="(max-width: 992px)")
+					img(src="/upload/logo-dark.svg", alt="Логотип")
+			else
+				picture
+					source(srcset="/upload/logo-word.svg", media="(max-width: 992px)")
+					img(src="/upload/logo.svg", alt="Логотип")
 
 		.header-main__btn.js-open-mobile-sidebar
 			.ic-hamburger

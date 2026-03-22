@@ -134,3 +134,73 @@ document.querySelector('.js-close-mobile-sidebar').addEventListener('click', fun
 	document.querySelector('.js-mobile-sidebar').classList.remove('open');
 	document.querySelector('.js-body').classList.remove('no-scroll');
 });
+
+
+// Открыть.Закрыть многостросчный текст
+
+document.addEventListener('DOMContentLoaded', function() {
+	if(document.querySelector('.js-more-text-btn')){
+		const textMore = document.querySelectorAll('.js-more-text-content');
+
+		textMore.forEach(content => {
+			const maxLines = content.getAttribute('data-max-lines');
+			const container = content.closest('.js-more-text');
+			const btn = container.querySelector('.js-more-text-btn');
+			const btnText = container.querySelector('.js-more-text-btn-text');
+			console.log('btn = ', btn);
+
+			let countLines = analyzeChildElements(content);
+
+			content.setAttribute('data-lines', countLines + 5);
+
+			if(countLines > maxLines){
+				btn.classList.add('visible');
+				content.style.webkitLineClamp = maxLines;
+				content.style.lineClamp = maxLines;
+				container.classList.add('truncated');
+			}
+
+
+			btn.addEventListener('click', function(){
+				let secondText = this.getAttribute('data-text') || 'Свернуть';
+				this.setAttribute('data-text', btnText.textContent);
+				btnText.textContent = secondText;
+
+				if(container.classList.contains('truncated')){
+					content.style.webkitLineClamp = content.getAttribute('data-lines');
+					content.style.lineClamp = content.getAttribute('data-lines');
+					container.classList.remove('truncated');
+				}else{
+					content.style.lineClamp = maxLines;
+					content.style.webkitLineClamp = maxLines;
+					content.style.lineClamp = maxLines;
+					container.classList.add('truncated');
+				}
+			})
+		});
+	}
+});
+
+function analyzeChildElements(container) {
+	// Получаем всех непосредственных детей контейнера
+	const childElements = container.children;
+	let sumLines = 0;
+
+	// Анализируем каждый элемент
+	for (let i = 0; i < childElements.length; i++) {
+		const child = childElements[i];
+
+		// Получаем высоту элемента
+		const height = child.offsetHeight;
+		
+		// Получаем стили элемента
+		const computedStyle = window.getComputedStyle(child);
+		const lineHeight = parseInt(computedStyle.lineHeight) || parseInt(computedStyle.fontSize) * 1.2;
+
+		// Рассчитываем количество строк
+		const estimatedLines = Math.round(height / lineHeight);
+		sumLines = sumLines + estimatedLines;
+	}
+
+	return sumLines;
+}

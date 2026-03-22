@@ -1,0 +1,29 @@
+/*-------------- share -----------------*/
+.share{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px;
+
+	&__label{
+		font-size: 1.6rem;
+		color: #B3B3B3;
+	}
+
+	&__list{
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	&__item{
+		display: block;
+		text-decoration: none;
+		transition: opacity 0.3s ease;
+
+		&:hover{opacity: 0.7;}
+	}
+
+	&__item_vk{color: #A0AFB5;}
+	&__item_ok{color: #EAD3AC;}
+}

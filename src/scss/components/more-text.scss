@@ -1,0 +1,59 @@
+/*-------------- more-text -----------------*/
+.more-text{
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	&__content{
+		transition: all 0.4s linear;
+		// line-height: 1.4;
+		 /* Стили для обрезанного текста */
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	// .btn{
+	// 	align-self: center;
+	// 	display: none;
+	// 	margin: 15px auto 0;
+
+	// 	&.visible{display: inline-flex;}
+	// }
+
+	&__link{
+		display: none;
+		text-decoration: underline;
+		cursor: pointer;
+		color: #fff;
+		text-decoration: underline;
+		transition: all 0.3s ease;
+
+		.icon{
+			color: #9B9B9B;
+			transition: all 0.3s ease;
+		}
+
+		&.visible{
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+		}
+
+		&:hover{
+			text-decoration: none;
+			color: var(--color-primary);
+		}
+	}
+
+	&:not(.truncated) &__link .icon{transform: rotate(180deg);}
+}
+
+// @media (max-width: 767px) {
+// 	.more-text{
+// 		.btn{
+// 			width: 100%;
+// 			margin: 0;
+// 		}
+// 	}
+// }

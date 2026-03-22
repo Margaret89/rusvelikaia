@@ -214,6 +214,24 @@
 
 .header-logo-label{display: none;}
 
+.bg-white{
+	.header{background: #F2F2F2;}
+
+	.header-top{
+		&__phone a,
+		&__callback{
+			color: #000;
+		}
+	}
+
+	.header-action{
+		&__icon,
+		&__price{
+			color: #000;
+		}
+	}
+}
+
 @media (max-width: 1279px) {
 	.header-address{
 		&__text{max-width: 170px;}

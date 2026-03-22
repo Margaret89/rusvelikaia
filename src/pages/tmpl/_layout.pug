@@ -10,7 +10,7 @@ html(lang="ru")
 			title #{pages[pageId].title}
 		else
 			title ALMA
-	body.js-body
+	body.js-body(class=bgWhite?'bg-white':'')
 		.wrapper
 			include ./_header
 			main
