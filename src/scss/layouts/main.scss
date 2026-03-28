@@ -210,7 +210,6 @@ button.btn{
 		}
 	}
 
-
 	&_border{
 		background: transparent;
 		border: 2px solid var(--color-primary);
@@ -220,6 +219,12 @@ button.btn{
 			box-shadow: inset 0 -5.4em 0 0 var(--color-primary);
 			color: #fff;
 		}
+	}
+
+	&_big{
+		height: 7.4rem;
+		border-radius: 16px;
+		font-size: 2.4rem;
 	}
 }
 

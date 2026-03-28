@@ -1,0 +1,61 @@
+/*-------------- counter -----------------*/
+.counter{
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	
+	&__toggle{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 24px;
+		height: 24px;
+		font-size: 2.4rem;
+		line-height: 1;
+		color: #A0A0A0;
+		transition: color 0.3s ease 0s;
+		cursor: pointer;
+
+		&:hover{color: var(--color-primary);}
+	}
+
+	input[type="text"],
+	input[type="number"]{
+		display: flex;
+		align-items: center;
+		height: 74px;
+		width: 96px;
+		font-family: var(--font-site);
+		font-size: 2.4rem;
+		font-weight: normal;
+		line-height: 1.2;
+		color: #000;
+		text-align: center;
+		padding: 0 10px;
+		border-radius: 16px;
+		border: none;
+		outline: none;
+		margin: 0;
+		background: transparent;
+		box-shadow: none;
+		transition: background-color 0.3s ease 0s;
+	}
+}
+
+@media (max-width: 767px) {
+	.counter{
+		input[type="text"],
+		input[type="number"]{
+			height: 45px;
+			width: 67px;
+			font-size: 1.7rem;
+		}
+
+		&__toggle{
+			width: 17px;
+			height: 17px;
+			font-size: 1.7rem;
+		}
+	}
+}

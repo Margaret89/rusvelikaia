@@ -11,6 +11,8 @@
 	&__label{font-size: 2rem;}
 }
 
+.header{margin-bottom: 25px;}
+
 .header-top{
 	display: flex;
 	align-items: center;
@@ -335,6 +337,13 @@
 		text-align: center;
 
 		img{margin: 0 auto;}
+	}
+
+	.bg-white .header-main .search-form{
+		input[type="submit"],
+		button{
+			color: #000;
+		}
 	}
 }
 

@@ -1,0 +1,102 @@
+/*-------------- bonus -----------------*/
+.bonus{
+	&__title{
+		font-size: 2.8rem;
+		color: #000;
+		text-align: center;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #C2C2C2;
+		margin-bottom: 35px;
+	}
+
+	&__list{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 37px;
+		padding: 0 60px;
+	}
+}
+
+.bonus-item{
+	width: calc(33.33% - 24.66px);
+	padding: 33px 42px;
+	background: #F7F7F7;
+	border-radius: 16px;
+
+	&__title{
+		font-size: 2.4rem;
+		color: #000;
+		margin-bottom: 15px;
+	}
+
+	&__text{
+		font-size: 1.6rem;
+		color: #969696;
+	}
+
+	&__sale{
+		font-family: var(--font-abril);
+		font-size: 6.5rem;
+		line-height: 1;
+		color: #000;
+		margin-top: 20px;
+	}
+
+	.counter{
+		margin-top: 18px;
+
+		input[type="text"],
+		input[type="number"]{
+			width: 138px;
+			background: #fff;
+		}
+	}
+
+	.coupon{margin-top: 20px;}
+}
+
+@media (max-width: 1279px) {
+	.bonus{
+		&__list{
+			flex-direction: column;
+			gap: 15px;
+			padding: 0;
+		}
+	}
+
+	.bonus-item{width: auto;}
+}
+
+@media (max-width: 767px) {
+	.bonus{
+		&__title{
+			font-size: 2.4rem;
+			padding-bottom: 0;
+			border: none;
+			margin-bottom: 24px;
+		}
+
+		&__list{gap: 8px;}
+	}
+
+	.bonus-item{
+		padding: 14px 22px;
+
+		&__title{
+			font-size: 1.8rem;
+			margin-bottom: 6px;
+		}
+
+		&__text{
+			font-size: 1.3rem;
+			line-height: 1;
+		}
+
+		&__sale{
+			font-size: 4.2rem;
+			margin-top: 10px;
+		}
+
+		.coupon{margin-top: 12px;}
+	}
+}

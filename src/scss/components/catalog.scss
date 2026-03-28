@@ -77,7 +77,16 @@
 }
 
 .bg-white{
-	.catalog-item{border-color: #E0E0E0;}
+	.catalog-item{
+		border-color: #E0E0E0;
+
+		&__price,
+		&__title a{
+			color: #000;
+		}
+
+		&__title a:hover{color: var(--color-primary);}
+	}
 }
 
 @media (max-width: 767px) {
