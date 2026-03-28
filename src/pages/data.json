@@ -24,6 +24,14 @@
 			"href": "basket.html",
 			"title":"Корзина"
 		},
+		"basket-banner":{
+			"href": "basket-banner.html",
+			"title":"Корзина с банером"
+		},
+		"basket-banner2":{
+			"href": "basket-banner2.html",
+			"title":"Корзина с банером 2"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",

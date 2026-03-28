@@ -1,0 +1,147 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'basket-banner'
+	- var bgWhite = true
+
+block body
+	.basket
+		.basket__top
+			.basket__title Корзина
+			.basket__subtitle Товарные позиции
+
+		.basket-list
+			-
+				var list=[
+					{img:'basket-item1.jpg', title:'Тарелка формы Тюльпан «Вьюнок». ИФЗ 18 см.', article:'Артикул: 0031220', count:'3', old_price:'2 800', price:'1 900', sale:'-26%'},
+					{img:'basket-item2.jpg', title:'Шкатулка из янтаря «Прямоугольная»', article:'Артикул: 0059627', count:'1', old_price:'18 000', price:'12 000', sale:'-30%'},
+					{img:'basket-item3.jpg', title:'Денежное дерево из янтаря. 30 листьев', article:'Артикул: 0059760', count:'1', price:'12 900'},
+					{img:'basket-item4.jpg', title:'Фруктовница «Нежность». Гжель', article:'Артикул: 09110', count:'1', old_price:'42 000', price:'33 750', sale:'-30%'},
+					{img:'basket-item5.jpg', title:'Пасхальное яйцо-рюмка. Златоуст', article:'Артикул: 206784', count:'1', old_price:'54 000', price:'37 800', sale:'-30%'},
+				]
+			each item in list
+				.basket-item
+					.basket-item-close
+						.basket-item-close__label Удалить
+
+						.basket-item-close__icon
+							+svg('ic-close','ic-close', '17', '17')
+
+					.basket-item__img
+						img(src="/upload/"+item.img, alt="")
+
+					.basket-item__main
+						.basket-item__title
+							a(href="#")= item.title
+
+						.basket-item-props
+							.basket-item-props__item= item.article
+
+					.basket-item__content
+						.basket-item__count
+							.counter
+								.counter__toggle -
+
+								.counter__field
+									input(type="text", placeholder="1")
+
+								.counter__toggle.counter__toggle_dark +
+
+						.basket-item__price-wrap
+							if(item.old_price)
+								.basket-item__old_price-wrap
+									.basket-item__old_price= item.old_price
+										span.basket-item__currency &#8381;
+									.basket-item__sale= item.sale
+
+							.basket-item__price= item.price
+								span.basket-item__currency &#8381;
+
+		.bonus
+			.bonus__title Бонусная система и скидки
+
+			.bonus__list
+				.bonus-item
+					.bonus-item__title Скидка личного кабинета
+					.bonus-item__text Скидка уже включена в указанную стоимость товаров выше
+					.bonus-item__sale 5%
+
+				.bonus-item
+					.bonus-item__title Списать бонусы
+					.bonus-item__text Максимальное количество бонусов – 1000 р.
+
+					.bonus-item__note Чтобы списать бонусы, отмените действие промокода
+
+				.bonus-item
+					.bonus-item__title Применить промокод
+
+					.coupon
+						.coupon__success Промокод FGE894KFD применен
+
+						.coupon__item
+							.coupon__field
+								input(type="text", value="5 000")
+				
+							.coupon__close
+								+svg('ic-close','ic-close', '24', '24')
+
+	.basket-result
+		.basket-result__title Итого к оплате
+
+		.basket-result__content-wrap
+			.basket-result__content
+				.basket-result-info
+					.basket-result-info__label 5 товаров на общую сумму
+					.basket-result-info__val 98 350
+						span.basket-result-info__currency &#8381;
+
+				.basket-result-sale
+					.basket-result-sale__label Скидка по промокоду FGE894KFD
+					.basket-result-sale__val — 5 000
+						span.basket-result-sale__currency &#8381;
+			
+				.basket-result__sum 93 350
+					span.basket-result__currency &#8381;
+
+				a(href="#").btn.btn_big Оформить заказ
+
+
+	.basket-poster
+		picture
+			source(srcset="/upload/basket-poster-mobile.jpg", media="(max-width: 767px)")
+			img(src="/upload/basket-poster.jpg", alt="")
+
+	.basket-other
+		.basket-other__title Не забудьте добавить в заказ подарочную упаковку!
+
+		.catalog-list
+			-
+				var list=[
+					{img:'bag1.png', prop:'Высота 230 мм', price:'950', title:'Подарочный пакет-упаковка из экокожи «Р» 18х10х23 см', article:'Артикул: 301350'},
+					{img:'bag2.png', prop:'Высота 230 мм', price:'950', title:'Подарочный пакет-упаковка из экокожи «Р» 18х10х23 см', article:'Артикул: 301351'},
+					{img:'bag3.png', prop:'Высота 420 мм', price:'2300', title:'Подарочный пакет-упаковка из экокожи «Р» 32х15х42 см', article:'Артикул: 301346'},
+					{img:'bag4.png', prop:'Высота 420 мм', price:'2300', title:'Подарочный пакет-упаковка из экокожи «Р» 32х15х42 см', article:'Артикул: 301347'},
+					{img:'bag5.png', prop:'Высота 260 мм', price:'1100', title:'Подарочный пакет-упаковка из экокожи «Р» 18х18х26 см', article:'Артикул: 301358'},
+					{img:'bag6.png', prop:'Высота 260 мм', price:'990', title:'Подарочный пакет-упаковка из экокожи «Р» 16х16х26 см', article:'Артикул: 400147'},
+					{img:'bag7.png', prop:'Высота 240 мм', price:'600', title:'Подарочный меховой мешок 14х24 см', article:'Артикул: 201417'},
+					{img:'bag8.png', prop:'Высота 300 мм', price:'3600', title:'Подарочный меховой мешок 18х30 см', article:'Артикул: 201416'},
+				]
+			each item in list
+				.catalog-item
+					.catalog-item__top
+						.catalog-item__prop= item.prop
+						.catalog-item__price= item.price
+							| 
+							|&#8381;
+
+					a(href="#").catalog-item__img-wrap
+						.catalog-item__img
+							img(src="/upload/"+item.img, alt="")
+						
+					.catalog-item__title
+						a(href="#")= item.title
+
+					.catalog-item__article= item.article
+
+		.basket-other__more
+			a(href="#") Больше подарочной упаковки
