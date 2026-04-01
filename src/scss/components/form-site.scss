@@ -1,0 +1,179 @@
+/*-------------- form-site -----------------*/
+.form-site{
+	&__title{
+		font-size: 2.8rem;
+		color: #000;
+		margin-bottom: 30px;
+	}
+
+	&__content{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 40px 126px;
+	}
+
+	&__item{
+		width: 100%;
+		position: relative;
+	}
+
+	&__item_half{width: calc(50% - 63px);}
+	
+	&__label{
+		font-size: 2rem;
+		font-weight: normal;
+		line-height: 1.2;
+		color: #999;
+		position: absolute;
+		top: 50%;
+		left: 30px;
+		transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+		transform: translateY(-50%);
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="time"],
+	input[type="date"],
+	textarea{
+		display: inline-flex;
+		align-items: center;
+		height: 6rem;
+		width: 100%;
+		font-family: var(--font-site);
+		font-size: 2rem;
+		font-weight: normal;
+		line-height: 1.2;
+		color: #000;
+		padding: 0 23px;
+		border-radius: 0;
+		border: 0;
+		border-bottom: 1px solid #000;
+		outline: 0;
+		margin: 0;
+		background: transparent;
+		box-shadow: none;
+		transition: border-color 0.2s ease 0s;
+	}
+
+	textarea{
+		height: 16rem;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+
+	input[type="text"]:focus,
+	input[type="number"]:focus,
+	input[type="email"]:focus,
+	input[type="password"]:focus,
+	input[type="time"]:focus,
+	input[type="date"]:focus,
+	textarea:focus{
+		border-color: var(--color-primary);
+	}
+
+	input[type="text"]:focus + &__label,
+	input[type="number"]:focus + &__label,
+	input[type="email"]:focus + &__label,
+	input[type="password"]:focus + &__label,
+	input[type="time"]:focus + &__label,
+	input[type="date"]:focus + &__label,
+	textarea:focus + &__label,
+	input[type="text"]:not(:placeholder-shown) + &__label,
+	input[type="number"]:not(:placeholder-shown) + &__label,
+	input[type="email"]:not(:placeholder-shown) + &__label,
+	input[type="password"]:not(:placeholder-shown) + &__label,
+	input[type="time"]:not(:placeholder-shown) + &__label,
+	input[type="date"]:not(:placeholder-shown) + &__label,
+	textarea:not(:placeholder-shown) + &__label{
+		transform: scale(0.75) translateY(-50px) translateX(-15px);
+	}
+
+	// &__field.error{
+	// 	input[type="text"],
+	// 	input[type="number"],
+	// 	input[type="email"],
+	// 	input[type="password"],
+	// 	input[type="time"],
+	// 	input[type="date"],
+	// 	textarea{
+	// 		border-color: #FFCAC1;
+	// 	}
+
+	// 	input[type="text"]::placeholder,
+	// 	input[type="number"]::placeholder,
+	// 	input[type="email"]::placeholder,
+	// 	input[type="password"]::placeholder,
+	// 	input[type="time"]::placeholder,
+	// 	input[type="date"]::placeholder,
+	// 	textarea::placeholder{
+	// 		color: var(--color-danger);
+	// 		font-size: 1.6rem;
+	// 		font-weight: 500;
+	// 		opacity: 1;
+	// 	}
+	// }
+
+	&__btn{
+		margin-top: 30px;
+
+		.btn,
+		input[type="submit"].btn{
+			width: 100%;
+			font-size: 1.2rem;
+		}
+	}
+
+	.error-msg{
+		@include font(normal, normal, 12px, 1.5, var(--color-danger));
+		margin-bottom: 3px;
+	}
+
+	// &__note{
+	// 	font-size: 15px;
+	// 	margin-top: 15px;
+	// }
+
+	
+	// &__polit{
+	// 	margin-top: 10px;
+	// 	position: relative;
+
+	// 	a{
+	// 		color: var(--color-text);
+	// 		transition: color 0.2s ease 0s;
+
+	// 		&:hover{color: var(--color-link);}
+	// 	}
+	// }
+
+	// &__captcha{margin-top: 12px;}
+
+	// &__sign{
+	// 	font-size: 1.2rem;
+	// 	margin-top: 5px;
+	// }
+}
+
+@media (max-width: 767px) {
+	.form-site{
+		&__title{
+			font-size: 2rem;
+			text-align: center;
+		}
+
+		&__item_half{width: 100%;}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
+		input[type="time"],
+		input[type="date"],
+		textarea{
+			font-size: 1.8rem;
+		}
+	}
+}

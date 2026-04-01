@@ -32,6 +32,10 @@
 			"href": "basket-banner2.html",
 			"title":"Корзина с банером 2"
 		},
+		"basket-order":{
+			"href": "basket-order.html",
+			"title":"Корзина (оформление заказа)"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",

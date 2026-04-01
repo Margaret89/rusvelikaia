@@ -1,0 +1,377 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'basket-order'
+	- var bgWhite = true
+
+block body
+	.basket
+		.basket__title Корзина
+
+		.order-products.js-order-products
+			.order-products__top
+				.order-products__text 5 товаров на общую сумму 
+				.order-products__price 93 350 
+					span.order-products__currency &#8381;
+
+				.order-products__toggle.js-order-products-toggle Список товаров
+					span.order-products__arr
+						+svg('ic-arr-down','ic-arr-down', '23', '10')
+
+				a(href="#order-products-info", data-fancybox="").order-products__link Список товаров
+
+			.order-products__content.js-order-products-content
+				#order-products-info.order-products__info.js-order-products-info
+					.basket-list
+						-
+							var list=[
+								{img:'basket-item1.jpg', title:'Тарелка формы Тюльпан «Вьюнок». ИФЗ 18 см.', article:'Артикул: 0031220', count:'3', old_price:'2 800', price:'1 900', sale:'-26%'},
+								{img:'basket-item2.jpg', title:'Шкатулка из янтаря «Прямоугольная»', article:'Артикул: 0059627', count:'1', old_price:'18 000', price:'12 000', sale:'-30%'},
+								{img:'basket-item3.jpg', title:'Денежное дерево из янтаря. 30 листьев', article:'Артикул: 0059760', count:'1', price:'12 900'},
+								{img:'basket-item4.jpg', title:'Фруктовница «Нежность». Гжель', article:'Артикул: 09110', count:'1', old_price:'42 000', price:'33 750', sale:'-30%'},
+								{img:'basket-item5.jpg', title:'Пасхальное яйцо-рюмка. Златоуст', article:'Артикул: 206784', count:'1', old_price:'54 000', price:'37 800', sale:'-30%'},
+							]
+						each item in list
+							.basket-item
+								.basket-item-close
+									.basket-item-close__label Удалить
+
+									.basket-item-close__icon
+										+svg('ic-close','ic-close', '17', '17')
+
+								.basket-item__img
+									img(src="/upload/"+item.img, alt="")
+
+								.basket-item__main
+									.basket-item__title
+										a(href="#")= item.title
+
+									.basket-item-props
+										.basket-item-props__item= item.article
+
+								.basket-item__content
+									.basket-item__count
+										.counter
+											.counter__toggle -
+
+											.counter__field
+												input(type="text", placeholder="1")
+
+											.counter__toggle.counter__toggle_dark +
+
+									.basket-item__price-wrap
+										if(item.old_price)
+											.basket-item__old_price-wrap
+												.basket-item__old_price= item.old_price
+													span.basket-item__currency &#8381;
+												.basket-item__sale= item.sale
+
+										.basket-item__price= item.price
+											span.basket-item__currency &#8381;
+
+					.basket-result
+						.basket-result__content-wrap
+							.basket-result__content
+								.basket-result-info
+									.basket-result-info__label 5 товаров на общую сумму
+									.basket-result-info__val 98 350
+										span.basket-result-info__currency &#8381;
+
+								.basket-result-sale
+									.basket-result-sale__label Скидка по промокоду FGE894KFD
+									.basket-result-sale__val — 5 000
+										span.basket-result-sale__currency &#8381;
+							
+								.basket-result__sum 93 350
+									span.basket-result__currency &#8381;
+		
+		.order
+			.order__title Оформление заказа
+
+			.order__content
+				.order__sect
+					.order__subtitle Способ доставки
+
+					.order__list
+						-
+							var list=[
+								{id:'fast-delivery', title:'Срочная доставка', text:'В течение 3-х часов сервисом «Достависта»', price:'1 000 '},
+								{id:'standart-delivery', title:'Стандартная доставка', text:'Выберите день доставки', price:'500 '},
+								{title:'Самовывоз', text:'г. Москва, Верхняя Сыромятническая, д. 2'},
+								{title:'Эксклюзивная доставка', text:'Премиальный сервис', info:'true', dark:'true'},
+							]
+						each item in list
+							label.order-check.js-order-check(class=item.dark?'order-check_dark':'', data-id=item.id?item.id:'')
+								input(type='radio', name="delivery")
+
+								.order-check__content
+									.order-check__info-wrap
+										.order-check__info
+											.order-check__title= item.title
+											.order-check__text= item.text
+										
+									if(item.price)
+										.order-check__price= item.price
+											|&#8381;
+
+									if(item.info)
+										.order-check__info
+											+svg('ic-info','ic-info', '26', '26')
+			
+				.order__sect
+					.order__subtitle Способ оплаты
+
+					.order__list
+						-
+							var list=[
+								{icon:'wallet.svg', title:'Оплата при получении', text:'Наличными или картой'},
+								{icon:'card.svg', title:'Онлайн оплата картой', text:'Оплата при оформлении заказа на сайте'},
+								{icon:'sbp.svg', title:'Оплата СБП', text:'Оплата по QR-коду'},
+								{icon:'docs.svg', title:'Оплата для юридических лиц', text:'Добавьте ИНН организации'},
+							]
+						each item in list
+							label.order-check
+								input(type='radio', name="pay")
+
+								.order-check__content
+									.order-check__info-wrap
+										if(item.icon)
+											.order-check__icon
+												img(src="/upload/"+item.icon, alt="")
+
+										.order-check__info
+											.order-check__title= item.title
+											.order-check__text= item.text
+										
+				.order__sect
+					.order__h3 Рассрочки и кредитные программы
+
+					.order__list
+						-
+							var list=[
+								{icon:'doljami.svg', title:'Рассрочка «Долями»', text:'Без переплат. От 4 до 12 платежей'},
+								{icon:'plait.svg', title:'Рассрочка «Плайт»', text:'Без переплат. От 4 до 12 платежей'},
+								{icon:'ya-split.svg', title:'Рассрочка «Яндекс.Сплит»', text:'Без переплат. От 4 до 36 платежей'},
+								{icon:'tbank-icon.svg', title:'Кредит «Тинькофф»', text:'От 6 до 36 месяцев'},
+							]
+						each item in list
+							label.order-check
+								input(type='radio', name="system")
+
+								.order-check__content
+									.order-check__info-wrap
+										if(item.icon)
+											.order-check__icon
+												img(src="/upload/"+item.icon, alt="")
+
+										.order-check__info
+											.order-check__title= item.title
+											.order-check__text= item.text
+
+									.order-check__info
+										+svg('ic-info','ic-info', '26', '26')
+
+				.form-site
+					.form-site__title Контактные данные
+
+					.form-site__content
+						label.form-site__item.form-site__item_half.js-form-site-item
+							input(name="name", type="text", placeholder=" ", value="Александр")
+							.form-site__label Имя
+
+						label.form-site__item.form-site__item_half.js-form-site-item
+							input(name="phone", type="text", class="js-phone", placeholder=" ", value="+7 903 254-23-20")
+							.form-site__label Телефон
+
+						label.form-site__item.form-site__item_half.js-form-site-item
+							input(name="email", type="email", placeholder=" ", value="magic@h3lab.ru")
+							.form-site__label E-mail
+
+							
+
+			.order__btn
+				a(href="#").btn.btn_big Оформить заказ
+
+			.order__polit
+				|Нажимая кнопку «Оформить заказ», я соглашаюсь с 
+				a Политикой конфиденциальности
+				
+				label.input-check
+					input(type='checkbox', checked="checked")
+
+					span.input-check__mark
+					span.input-check__text Даю согласие на получение информационных и рекламных рассылок
+				
+	#fast-delivery.popup-delivery(style="display: none;")
+		.popup-delivery__top
+			.popup-delivery__logo
+				img(src="/upload/logo_dostavista.svg", alt="")
+
+			.popup-delivery__title Срочная доставка
+
+		form.delivery-form
+			.delivery-form__sect
+				.delivery-form__title Сохраненные адреса
+
+				.delivery-form__address
+					label.check-address
+						input(type='radio')
+
+						.check-address__content
+							.check-address__icon
+								+svg('ic-map','ic-map', '35', '35')
+
+							.check-address__info
+								.check-address__title Дом
+								.check-address__text г. Москва, ул. Бакинская, д. 46 к2
+
+			.delivery-form__sect
+				.delivery-form__title Укажите адрес доставки
+
+				.delivery-form__list
+					label.delivery-form__item
+						input(name="address", type="text", placeholder=" ", value="Москва")
+						.delivery-form__label Местоположение
+
+					label.delivery-form__item
+						input(name="street", type="text", placeholder=" ")
+						.delivery-form__label Улица и номер дома
+
+					.delivery-form__group
+						label.delivery-form__item
+							input(name="ofice", type="text", placeholder=" ", value="248")
+							.delivery-form__label Кв/Офис
+
+						label.delivery-form__item
+							input(name="entrance", type="text", placeholder=" ", value="2")
+							.delivery-form__label Подъезд
+
+						label.delivery-form__item
+							input(name="floor", type="text", placeholder=" ", value="10")
+							.delivery-form__label Этаж
+
+						label.delivery-form__item
+							input(name="doorphone", type="text", placeholder=" ", value="248")
+							.delivery-form__label Домофон
+
+					label.delivery-form__item
+						input(name="comment", type="text", placeholder=" ")
+						.delivery-form__label Комментарий
+
+			.delivery-form__btn
+				button(type="submit").btn Сохранить
+
+	#standart-delivery.popup-delivery(style="display: none;")
+		.popup-delivery__top
+			.popup-delivery__title Стандартная доставка
+
+		form.delivery-form
+			.delivery-form__sect
+				.delivery-form__title Сохраненные адреса
+
+				.delivery-form__address
+					label.check-address
+						input(type='radio', name="address")
+
+						.check-address__content
+							.check-address__icon
+								+svg('ic-map','ic-map', '35', '35')
+
+							.check-address__info
+								.check-address__title Дом
+								.check-address__text г. Москва, ул. Бакинская, д. 46 к2
+
+					label.check-address
+						input(type='radio', name="address")
+
+						.check-address__content
+							.check-address__icon
+								+svg('ic-map','ic-map', '35', '35')
+
+							.check-address__info
+								.check-address__title Офис
+								.check-address__text г. Москва, ул. Шереметьевская, 6 корп. 1
+
+			.delivery-form__sect
+				.delivery-form__title Укажите адрес доставки
+
+				.delivery-form__list
+					label.delivery-form__item
+						input(name="address", type="text", placeholder=" ", value="Москва")
+						.delivery-form__label Местоположение
+
+					label.delivery-form__item
+						input(name="street", type="text", placeholder=" ")
+						.delivery-form__label Улица и номер дома
+
+					.delivery-form__group
+						label.delivery-form__item
+							input(name="ofice", type="text", placeholder=" ", value="248")
+							.delivery-form__label Кв/Офис
+
+						label.delivery-form__item
+							input(name="entrance", type="text", placeholder=" ", value="2")
+							.delivery-form__label Подъезд
+
+						label.delivery-form__item
+							input(name="floor", type="text", placeholder=" ", value="10")
+							.delivery-form__label Этаж
+
+						label.delivery-form__item
+							input(name="doorphone", type="text", placeholder=" ", value="248")
+							.delivery-form__label Домофон
+
+					label.delivery-form__item
+						input(name="comment", type="text", placeholder=" ")
+						.delivery-form__label Комментарий
+			
+			.delivery-form__sect
+				.delivery-form__title Выберите дату доставки
+
+				.delivery-form__date-list
+					label.text-check
+						input(type='radio', checked="checked", name="date")
+						span.text-check__val Вторник / 26 мая 2026
+
+					label.text-check
+						input(type='radio', name="date")
+						span.text-check__val Среда / 27 мая 2026
+
+					label.text-check
+						input(type='radio', name="date")
+						span.text-check__val Четверг / 28 мая 2026
+					
+			.delivery-form__btn
+				button(type="submit").btn Сохранить
+
+	#pay.popup-delivery(style="display: none;")
+		.popup-delivery__top
+			.popup-delivery__title Оплата для юридических лиц
+
+		form.delivery-form
+			.delivery-form__sect
+				.delivery-form__title Укажите ИНН организации
+
+				.delivery-form__field
+					input(type="text", placeholder="Введите ИНН")
+
+				
+			.delivery-form__sect
+				.delivery-form__title Реквизиты организации
+
+				.delivery-form__list
+					label.delivery-form__item
+						input(name="name", type="text", placeholder=" ", value="ООО «Медарта»")
+						.delivery-form__label Наименование организации
+
+					label.delivery-form__item
+						input(name="kpp", type="text", placeholder=" ", value="500301001 ")
+						.delivery-form__label КПП
+
+					label.delivery-form__item
+						input(name="ogrn", type="text", placeholder=" ", value="1185027009375")
+						.delivery-form__label ОГРН
+			
+					
+			.delivery-form__btn
+				button(type="submit").btn Сохранить

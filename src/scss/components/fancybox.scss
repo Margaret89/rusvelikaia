@@ -41,3 +41,7 @@ body .f-button svg{
 	color: #ABABAB;
 	transition: color 0.3s ease;
 }
+
+@media (max-width: 767px) {
+	body .f-button.is-close-button::after{display: none;}
+}

@@ -1,0 +1,342 @@
+/*-------------- popup-delivery -----------------*/
+.popup-delivery{
+	width: 1165px;
+	max-width: calc(100% - 150px);
+	border-radius: 20px;
+	
+	&.f-html{padding: 52px 100px;}
+
+	&__top{
+		width: 100%;
+		text-align: center;
+		padding: 20px 0;
+		position: absolute;
+		bottom: 100%;
+		left: 0;
+	}
+
+	&__title{
+		font-size: 3.2rem;
+		line-height: 1.2;
+		color: #fff;
+	}
+
+	&__logo{
+		margin-bottom: 5px;
+
+		img{margin: 0 auto;}
+	}
+}
+
+.delivery-form{
+	&__sect:not(:last-child){margin-bottom: 52px;}
+
+	&__title{
+		font-size: 2rem;
+		color: #828282;
+		margin-bottom: 20px;
+	}
+
+	&__address{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 24px;
+	}
+
+	&__list{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 40px 126px;
+		margin-top: 30px;
+	}
+
+	&__group{
+		display: flex;
+		gap: 20px;
+		width: calc(50% - 63px);
+	}
+
+	&__item{
+		width: calc(50% - 63px);
+		position: relative;
+	}
+
+	&__group &__item{width: 100%;}
+
+	&__label{
+		font-size: 1.4rem;
+		font-weight: normal;
+		line-height: 1.2;
+		color: #999;
+		position: absolute;
+		top: 50%;
+		left: 30px;
+		transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+		transform: translateY(-50%);
+	}
+
+	&__item{
+		input[type="text"],
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
+		input[type="time"],
+		input[type="date"],
+		textarea{
+			display: inline-flex;
+			align-items: center;
+			height: 6rem;
+			width: 100%;
+			font-family: var(--font-site);
+			font-size: 2rem;
+			font-weight: normal;
+			line-height: 1.2;
+			color: #000;
+			padding: 0 23px;
+			border-radius: 0;
+			border: 0;
+			border-bottom: 1px solid #000;
+			outline: 0;
+			margin: 0;
+			background: transparent;
+			box-shadow: none;
+			transition: border-color 0.2s ease 0s;
+		}
+	
+		textarea{
+			height: 16rem;
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+	
+		input[type="text"]:focus,
+		input[type="number"]:focus,
+		input[type="email"]:focus,
+		input[type="password"]:focus,
+		input[type="time"]:focus,
+		input[type="date"]:focus,
+		textarea:focus{
+			border-color: var(--color-primary);
+		}
+	
+		input[type="text"]:focus + .delivery-form__label,
+		input[type="number"]:focus + .delivery-form__label,
+		input[type="email"]:focus + .delivery-form__label,
+		input[type="password"]:focus + .delivery-form__label,
+		input[type="time"]:focus + .delivery-form__label,
+		input[type="date"]:focus + .delivery-form__label,
+		textarea:focus + .delivery-form__label,
+		input[type="text"]:not(:placeholder-shown) + .delivery-form__label,
+		input[type="number"]:not(:placeholder-shown) + .delivery-form__label,
+		input[type="email"]:not(:placeholder-shown) + .delivery-form__label,
+		input[type="password"]:not(:placeholder-shown) + .delivery-form__label,
+		input[type="time"]:not(:placeholder-shown) + .delivery-form__label,
+		input[type="date"]:not(:placeholder-shown) + .delivery-form__label,
+		textarea:not(:placeholder-shown) + .delivery-form__label{
+			transform: translateY(-33px) translateX(-5px);
+		}
+	}
+
+	&__field{
+		input[type="text"],
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
+		input[type="time"],
+		input[type="date"],
+		textarea{
+			display: inline-flex;
+			align-items: center;
+			height: 9.2rem;
+			width: 100%;
+			font-family: var(--font-site);
+			font-size: 1.8rem;
+			font-weight: normal;
+			line-height: 1.2;
+			color: #000;
+			padding: 0 44px;
+			border-radius: 16px;
+			border: 1px solid #F7F7F7;
+			outline: 0;
+			margin: 0;
+			background: #F7F7F7;
+			box-shadow: none;
+			transition: border-color 0.2s ease 0s;
+		}
+	
+		textarea{
+			height: 16rem;
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+	
+		input[type="text"]:focus,
+		input[type="number"]:focus,
+		input[type="email"]:focus,
+		input[type="password"]:focus,
+		input[type="time"]:focus,
+		input[type="date"]:focus,
+		textarea:focus{
+			border-color: var(--color-primary);
+		}
+	}
+
+	&__btn{
+		width: calc(50% - 61px);
+		margin-top: 30px;
+
+		.btn{width: 100%;}
+	}
+
+	&__date-list{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 25px;
+
+		.text-check{width: calc(33.33% - 16.66px);}
+	}
+}
+
+
+.check-address{
+	width: calc(50% - 12px);
+
+	input[type='radio']{display: none;}
+
+	&__content{
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		padding: 20px;
+		background: #F7F7F7;
+		border-radius: 16px;
+		transition: background-color 0.3s ease;
+	}
+
+	&__icon{
+		flex-shrink: 0;
+		color: #6C6C6C;
+		transition: color 0.3s ease;
+	}
+
+	&__title{
+		font-size: 1.8rem;
+		color: #000;
+		transition: color 0.3s ease;
+	}
+
+	&__text{
+		font-size: 1.6rem;
+		color: #737373;
+		margin-top: 3px;
+		transition: color 0.3s ease;
+	}
+
+	&:hover &__content,
+	input[type=radio]:checked + &__content{
+		background: #29675F;
+	}
+
+	&:hover &__title,
+	input[type=radio]:checked + &__title{
+		color: #fff;
+	}
+}
+
+.text-check{
+	input[type='radio']{display: none;}
+
+	&__val{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 5.8rem;
+		padding: 5px 15px;
+		background: #F7F7F7;
+		font-size: 1.8rem;
+		color: #000;
+		border-radius: 4px;
+		transition: all 0.3s ease;
+	}
+
+	&:hover &__val,
+	input[type=radio]:checked + &__val{
+		background: #29675F;
+		color: #fff;
+	}
+}
+
+@media (max-width: 767px) {
+	.popup-delivery{
+		max-width: calc(100% - 50px);
+		
+		&.f-html{padding: 40px 20px;}
+		&__top{position: static;}
+		&__logo{display: none;}
+
+		&__title{
+			font-size: 2rem;
+			color: #000;
+		}
+	}
+
+	.delivery-form{
+		&__title{
+			font-size: 1.6rem;
+			text-align: center;
+		}
+
+		&__address{gap: 10px;}
+		&__sect:not(:last-child){margin-bottom: 40px;}
+
+		&__item{width: 100%;}
+
+		&__group{
+			flex-wrap: wrap;
+			gap: 30px 46px;
+			width: 100%;
+		}
+
+		&__group &__item{width: calc(50% - 23px);}
+
+		&__date-list{
+			flex-direction: column;
+			gap: 10px;
+			padding-left: 23px;
+			padding-right: 23px;
+		}
+
+		&__date-list .text-check{width: 100%;}
+
+		&__btn{
+			width: 100%;
+			text-align: center;
+
+			.btn{
+				width: 215px;
+				margin: 0 auto;
+			}
+		}
+
+		&__field{
+			input[type="text"],
+			input[type="email"],
+			input[type="number"],
+			input[type="password"],
+			input[type="time"],
+			input[type="date"],
+			textarea{
+				height: 7.6rem;
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+	.check-address{
+		width: 100%;
+
+		&__title{font-size: 1.6rem;}
+		&__text{font-size: 1.2rem;}
+		&__content{border-radius: 12px;}
+	}
+}

@@ -204,3 +204,47 @@ function analyzeChildElements(container) {
 
 	return sumLines;
 }
+
+// Раскрывающийся блок оформления заказа
+document.querySelector('.js-order-products-toggle').addEventListener('click', () => {
+	const parentOrder = document.querySelector('.js-order-products');
+	const accBody = parentOrder.querySelector('.js-order-products-content');
+	const accContent = parentOrder.querySelector('.js-order-products-info');
+
+	parentOrder.classList.toggle("opened");
+	
+	if ( parentOrder.classList.contains("opened") ) {
+		accBody.style.maxHeight = `${accContent.clientHeight}px`;
+	} else {
+		accBody.style.maxHeight = "0px";
+	}
+});
+
+//Открыть попап быстрая доставка
+// document.querySelectorAll('input[type="radio"][name="groupName"]').forEach((button) => {
+//     button.addEventListener('change', function() {
+//         if (this.checked) {
+//             // Интересно, но раньше у нас была выбрана другая кнопка?
+//             console.log(`Предыдущий выбор: ${previousChoice || "не был сделан"}; Текущий выбор: ${this.value}`);
+//             previousChoice = this.value; // И вот новый выбор!
+//         }
+//     });
+// });
+
+
+
+// document.querySelector('.js-order-check[data-id=fast-delivery] input[type=radio]').addEventListener('change', () => {
+// 	if (this.checked) {
+// 	Fancybox.show([{ src: "#fast-delivery", type: "inline" }]);
+// 	console.log('11 = ', );
+// 	}
+// });
+
+//Открыть попап стандартная доставка
+document.querySelector('.js-order-check[data-id=fast-delivery]').addEventListener('click', () => {
+	Fancybox.show([{ src: "#fast-delivery", type: "inline" }]);
+});
+//Открыть попап стандартная доставка
+document.querySelector('.js-order-check[data-id=standart-delivery]').addEventListener('click', () => {
+	Fancybox.show([{ src: "#standart-delivery", type: "inline" }]);
+});
