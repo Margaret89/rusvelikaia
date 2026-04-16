@@ -1,0 +1,52 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'page-error-white'
+	- var bgWhite = true
+
+block body
+	.page-error
+		.page-error__code 404
+
+		.page-error__content
+			.page-error__title Страница не найдена
+			.page-error__text Неправильно набран адрес, или такой страницы на сайте больше не существует. 
+
+			a(href="#").btn.btn_big На главную страницу
+
+	.product-other
+		.product-other__title Началась сезонная распродажа!
+
+		.catalog-list
+			-
+				var list=[
+					{img:'bag1.png', prop:'Высота 230 мм', price:'950', title:'Подарочный пакет-упаковка из экокожи «Р» 18х10х23 см', article:'Артикул: 301350'},
+					{img:'bag2.png', prop:'Высота 230 мм', price:'950', title:'Подарочный пакет-упаковка из экокожи «Р» 18х10х23 см', article:'Артикул: 301351'},
+					{img:'bag3.png', prop:'Высота 420 мм', price:'2300', title:'Подарочный пакет-упаковка из экокожи «Р» 32х15х42 см', article:'Артикул: 301346'},
+					{img:'bag4.png', prop:'Высота 420 мм', price:'2300', title:'Подарочный пакет-упаковка из экокожи «Р» 32х15х42 см', article:'Артикул: 301347'},
+					{img:'bag5.png', prop:'Высота 260 мм', price:'1100', title:'Подарочный пакет-упаковка из экокожи «Р» 18х18х26 см', article:'Артикул: 301358'},
+					{img:'bag6.png', prop:'Высота 260 мм', price:'990', title:'Подарочный пакет-упаковка из экокожи «Р» 16х16х26 см', article:'Артикул: 400147'},
+					{img:'bag7.png', prop:'Высота 240 мм', price:'600', title:'Подарочный меховой мешок 14х24 см', article:'Артикул: 201417'},
+					{img:'bag8.png', prop:'Высота 300 мм', price:'3600', title:'Подарочный меховой мешок 18х30 см', article:'Артикул: 201416'},
+				]
+			each item in list
+				.catalog-item
+					.catalog-item__top
+						.catalog-item__prop= item.prop
+						.catalog-item__price= item.price
+							| 
+							|&#8381;
+
+					a(href="#").catalog-item__img-wrap
+						.catalog-item__img
+							img(src="/upload/"+item.img, alt="")
+						
+					.catalog-item__title
+						a(href="#")= item.title
+
+					.catalog-item__article= item.article
+
+		.product-other__more
+			a(href="#") Больше товаров из категории «Распродажа»
+
+	include ./components/_subscribe

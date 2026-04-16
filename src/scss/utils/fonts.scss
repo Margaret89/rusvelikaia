@@ -73,3 +73,14 @@
 	font-style: normal;
 	font-display: swap;
 }
+
+// bradobrei
+@font-face {
+	font-family: 'bradobrei';
+	src: local('bradobrei'),
+		url('../fonts/bradobrei/bradobrei.woff2') format('woff2'),
+		url('../fonts/bradobrei/bradobrei.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

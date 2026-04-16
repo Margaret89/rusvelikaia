@@ -1,0 +1,68 @@
+/*-------------- page-error -----------------*/
+.page-error{
+	text-align: center;
+
+	&__code{
+		font-family: var(--font-bradobrei);
+		font-size: 32rem;
+		line-height: 1;
+		color: #595959;
+	}
+
+	&__content{
+		border-top: 1px solid rgba(194, 194, 194, 0.3);
+		padding-top: 50px;
+		margin: 20px 40px;
+		color: #fff;
+	}
+
+	&__title{
+		font-size: 3.8rem;
+		line-height: 1;
+	}
+	
+	&__text{
+		font-size: 1.6rem;
+		margin-top: 20px;
+	}
+
+	.btn{
+		min-width: 483px;
+		margin-top: 40px;
+	}
+}
+
+.bg-white{
+	.page-error{
+		&__code{color: #949494;}
+		&__content{color: #000;}
+	}
+}
+
+@media (max-width: 991px) {
+	.page-error{
+		&__code{font-size: 24rem;}
+	}
+}
+
+@media (max-width: 767px) {
+	.page-error{
+		&__code{font-size: 13.1rem;}
+		&__title{font-size: 2.6rem;}
+
+		&__text{
+			font-size: 1.4rem;
+			margin-top: 1.6rem;
+		}
+
+		&__content{
+			margin: 30px 10px;
+			padding-top: 30px;
+		}
+
+		.btn{
+			min-width: 0;
+			margin-top: 30px;
+		}
+	}
+}

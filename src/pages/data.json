@@ -64,6 +64,14 @@
 			"href": "lk-callback.html",
 			"title":"Личный кабинет (Обратная связь)"
 		},
+		"page-error":{
+			"href": "page-error.html",
+			"title":"404"
+		},
+		"page-error-white":{
+			"href": "page-error-white.html",
+			"title":"404 (white)"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",
