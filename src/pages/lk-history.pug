@@ -1,0 +1,224 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'lk-history'
+	- var bgWhite = true
+
+block body
+	.lk
+		.lk__title Личный кабинет
+
+		.lk-data-list
+			.lk-data-item.lk-data-item_dark
+				.lk-data-item__top
+					.lk-data-item__title Ваша скидка
+
+					.lk-data-item__info
+						+svg('ic-info','ic-info', '19', '19')
+
+
+				.lk-data-item__sale 0%
+
+			.lk-data-item
+				.lk-data-item__top
+					.lk-data-item__title Бонусные баллы
+
+					.lk-data-item__info
+						+svg('ic-info','ic-info', '19', '19')
+
+				.lk-data-item__num-wrap
+					.lk-data-item__num.lk-data-item__num_red 1 000
+						+svg('ic-lightning','ic-lightning', '11', '21')
+
+			.lk-data-item
+				.lk-data-item__top
+					.lk-data-item__title Номер кабинета
+
+				.lk-data-item__num-wrap
+					.lk-data-item__num 4898305
+					.lk-data-item__copy
+						+svg('ic-copy','ic-copy', '17', '19')
+
+			.lk-data-item
+				.lk-data-item__top
+					.lk-data-item__title Сумма покупок
+
+					.lk-data-item__info
+						+svg('ic-info','ic-info', '19', '19')
+
+				.lk-data-item__num-wrap
+					.lk-data-item__num 356 789
+					.lk-data-item__currency &#8381;
+
+		.lk__content
+			.lk__sidebar
+				ul.lk-menu
+					-
+						var list=[
+							{text:'Личные данные'},
+							{text:'Адреса доставки'},
+							{text:'Бонусная система'},
+							{text:'Промокоды', count:'2'},
+							{text:'Истрия заказов', status:'active'},
+							{text:'Избранное'},
+							{text:'Обратная связь', count:'3', line:'true'},
+						]
+					each item in list
+						li.lk-menu__item(class=item.status?'active':'', class=item.line?'lk-menu__item_line':'')
+							a(href="#").lk-menu__link= item.text
+								if(item.count)
+									span.lk-menu__count= item.count
+
+				.lk__exit
+					a(href="#") Выйти из ЛК
+
+			.lk__main
+				.lk__subtitle История заказов
+
+				.unwrap-history.js-unwrap-block
+					.unwrap-history__head.js-unwrap-head
+						.unwrap-history__head-left
+							.unwrap-history__title Заказ №3697043
+							.unwrap-history__date 20 мая 2026
+
+						.unwrap-history__head-right
+							.unwrap-history__count 5 товаров на общую сумму
+							.unwrap-history__price 124 400 
+								span.unwrap-history__currency &#8381;
+
+							.unwrap-history__arr
+								+svg('ic-arr-down','ic-arr-down', '23', '10')
+
+					.unwrap-history__content.js-unwrap-content
+						.unwrap-history__info.js-unwrap-info
+							.basket-list
+								-
+									var list=[
+										{img:'basket-item1.jpg', title:'Тарелка формы Тюльпан «Вьюнок». ИФЗ 18 см.', article:'Артикул: 0031220', count:'3', old_price:'2 800', price:'1 900', sale:'-26%'},
+										{img:'basket-item2.jpg', title:'Шкатулка из янтаря «Прямоугольная»', article:'Артикул: 0059627', count:'1', old_price:'18 000', price:'12 000', sale:'-30%'},
+										{img:'basket-item3.jpg', title:'Денежное дерево из янтаря. 30 листьев', article:'Артикул: 0059760', count:'1', price:'12 900'},
+										{img:'basket-item4.jpg', title:'Фруктовница «Нежность». Гжель', article:'Артикул: 09110', count:'1', old_price:'42 000', price:'33 750', sale:'-30%'},
+										{img:'basket-item5.jpg', title:'Пасхальное яйцо-рюмка. Златоуст', article:'Артикул: 206784', count:'1', old_price:'54 000', price:'37 800', sale:'-30%'},
+									]
+								each item in list
+									.basket-item
+										.basket-item__img
+											img(src="/upload/"+item.img, alt="")
+
+										.basket-item__main
+											.basket-item__title
+												a(href="#")= item.title
+
+											.basket-item-props
+												.basket-item-props__item= item.article
+
+										.basket-item__content
+											.basket-item__count= item.count
+												span.basket-item__unit шт.
+												
+
+											.basket-item__price-wrap
+												.basket-item__price= item.price
+													span.basket-item__currency &#8381;
+
+							.unwrap-history__btn
+								a(href="#").btn Повторить заказ
+				
+				.unwrap-history.js-unwrap-block
+					.unwrap-history__head.js-unwrap-head
+						.unwrap-history__head-left
+							.unwrap-history__title Заказ №1765894
+							.unwrap-history__date 05 мая 2026
+
+						.unwrap-history__head-right
+							.unwrap-history__count 2 товара на общую сумму
+							.unwrap-history__price 248 400 
+								span.unwrap-history__currency &#8381;
+
+							.unwrap-history__arr
+								+svg('ic-arr-down','ic-arr-down', '23', '10')
+
+					.unwrap-history__content.js-unwrap-content
+						.unwrap-history__info.js-unwrap-info
+							.basket-list
+								-
+									var list=[
+										{img:'basket-item1.jpg', title:'Тарелка формы Тюльпан «Вьюнок». ИФЗ 18 см.', article:'Артикул: 0031220', count:'3', old_price:'2 800', price:'1 900', sale:'-26%'},
+										{img:'basket-item2.jpg', title:'Шкатулка из янтаря «Прямоугольная»', article:'Артикул: 0059627', count:'1', old_price:'18 000', price:'12 000', sale:'-30%'},
+									]
+								each item in list
+									.basket-item
+										.basket-item__img
+											img(src="/upload/"+item.img, alt="")
+
+										.basket-item__main
+											.basket-item__title
+												a(href="#")= item.title
+
+											.basket-item-props
+												.basket-item-props__item= item.article
+
+										.basket-item__content
+											.basket-item__count= item.count
+												span.basket-item__unit шт.
+												
+
+											.basket-item__price-wrap
+												.basket-item__price= item.price
+													span.basket-item__currency &#8381;
+
+							.unwrap-history__btn
+								a(href="#").btn Повторить заказ
+				
+				.unwrap-history.js-unwrap-block
+					.unwrap-history__head.js-unwrap-head
+						.unwrap-history__head-left
+							.unwrap-history__title Заказ №583682
+							.unwrap-history__date 18 апреля 2026
+
+						.unwrap-history__head-right
+							.unwrap-history__count 6 товаров на общую сумму
+							.unwrap-history__price 56 300 
+								span.unwrap-history__currency &#8381;
+
+							.unwrap-history__arr
+								+svg('ic-arr-down','ic-arr-down', '23', '10')
+
+					.unwrap-history__content.js-unwrap-content
+						.unwrap-history__info.js-unwrap-info
+							.basket-list
+								-
+									var list=[
+										{img:'basket-item1.jpg', title:'Тарелка формы Тюльпан «Вьюнок». ИФЗ 18 см.', article:'Артикул: 0031220', count:'3', old_price:'2 800', price:'1 900', sale:'-26%'},
+										{img:'basket-item2.jpg', title:'Шкатулка из янтаря «Прямоугольная»', article:'Артикул: 0059627', count:'1', old_price:'18 000', price:'12 000', sale:'-30%'},
+										{img:'basket-item3.jpg', title:'Денежное дерево из янтаря. 30 листьев', article:'Артикул: 0059760', count:'1', price:'12 900'},
+										{img:'basket-item4.jpg', title:'Фруктовница «Нежность». Гжель', article:'Артикул: 09110', count:'1', old_price:'42 000', price:'33 750', sale:'-30%'},
+										{img:'basket-item5.jpg', title:'Пасхальное яйцо-рюмка. Златоуст', article:'Артикул: 206784', count:'1', old_price:'54 000', price:'37 800', sale:'-30%'},
+										{img:'basket-item5.jpg', title:'Пасхальное яйцо-рюмка. Златоуст', article:'Артикул: 206784', count:'1', old_price:'54 000', price:'37 800', sale:'-30%'},
+									]
+								each item in list
+									.basket-item
+										.basket-item__img
+											img(src="/upload/"+item.img, alt="")
+
+										.basket-item__main
+											.basket-item__title
+												a(href="#")= item.title
+
+											.basket-item-props
+												.basket-item-props__item= item.article
+
+										.basket-item__content
+											.basket-item__count= item.count
+												span.basket-item__unit шт.
+												
+
+											.basket-item__price-wrap
+												.basket-item__price= item.price
+													span.basket-item__currency &#8381;
+
+							.unwrap-history__btn
+								a(href="#").btn Повторить заказ
+
+
+	include ./components/_subscribe

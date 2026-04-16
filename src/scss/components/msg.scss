@@ -1,0 +1,56 @@
+/*-------------- msg -----------------*/
+.msg-list{
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	&__status{
+		font-size: 1.6rem;
+		color: var(--color-primary);
+		text-align: center;
+	}
+}
+
+.msg-item{
+	width: 52%;
+	background: #ECF4F3;
+	border-radius: 16px;
+	padding: 15px 30px;
+
+	&__date{
+		font-size: 1.4rem;
+		color: #999;
+		margin-bottom: 6px;
+	}
+
+	&__text{
+		font-size: 1.6rem;
+		line-height: 1.6;
+		color: #000;
+	}
+
+	&:nth-child(even){
+		align-self: flex-end;
+		background: #29675F;
+	}
+
+	&:nth-child(even) &__date{color: #B7B7B7;}
+	&:nth-child(even) &__text{color: #fff;}
+}
+
+@media (max-width: 991px) {
+	.msg-item{width: 60%;}
+}
+
+@media (max-width: 767px) {
+	.msg-list{gap: 20px;}
+	
+	.msg-item{
+		width: 83%;
+
+		&__date,
+		&__text{
+			font-size: 1.2rem;
+		}
+	}
+}

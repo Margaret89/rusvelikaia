@@ -1,0 +1,171 @@
+/*-------------- subscribe -----------------*/
+.subscribe{
+	background: #F7F7F7 url('../img/logo_rus.svg') no-repeat center bottom;
+	background-size: contain;
+	padding: 50px 0;
+	margin-top: 60px;
+	margin-left: -25px;
+	margin-right: -25px;
+
+	&__content{
+		margin-left: 562px;
+		margin-right: 182px;
+	}
+
+	&__title{
+		font-size: 2.8rem;
+		color: #000;
+		margin-bottom: 6px;
+	}
+
+	&__text{
+		font-size: 1.6rem;
+		color: #999;
+		margin-bottom: 20px;
+	}
+
+	&__label{
+		font-size: 1.6rem;
+		color: #999;
+		margin-bottom: 5px;
+	}
+
+	&__fields{
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		max-width: 630px;
+
+		.btn{flex-shrink: 0;}
+	}
+
+	&__field{
+		width: 100%;
+		position: relative;
+
+		input[type="text"],
+		input[type="email"]{
+			display: inline-flex;
+			align-items: center;
+			height: 5.8rem;
+			width: 100%;
+			font-family: var(--font-site);
+			font-size: 1.6rem;
+			font-weight: normal;
+			line-height: 1.2;
+			color: #000;
+			padding: 0 23px 0 55px;
+			border-radius: 4px;
+			border: 1px solid #D4D4D4;
+			outline: 0;
+			margin: 0;
+			background: #fff;
+			box-shadow: none;
+			transition: border-color 0.2s ease 0s;
+		}
+
+		input[type="text"]:focus,
+		input[type="email"]:focus{
+			border-color: var(--color-primary);
+		}
+
+		input[type="text"]::placeholder,
+		input[type="email"]::placeholder{
+			color: #ccc;
+			opacity: 1;
+		}
+
+		&::before{
+			content: '';
+			display: block;
+			width: 24px;
+			height: 18px;
+			background: url(../img/icon_mail.svg) no-repeat center;
+			background-size: contain;
+			position: absolute;
+			top: 50%;
+			left: 20px;
+			transform: translateY(-50%);
+		}
+	}
+
+	&__note{
+		font-size: 1.2rem;
+		color: #999;
+		margin-top: 15px;
+	}
+}
+
+@media (max-width: 1439px) {
+	.subscribe{
+		&__content{
+			margin-left: 425px;
+			margin-right: 70px;
+		}
+	}
+}
+
+@media (max-width: 1279px) {
+	.subscribe{
+		&__content{
+			margin-left: 335px;
+			margin-right: 25px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.subscribe{
+		&__content{
+			margin-left: 25px;
+			margin-right: 25px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.subscribe{
+		margin-top: 27px;
+		padding: 28px 0;
+		background-image: none;
+		position: relative;
+
+		&::before{
+			content: '';
+			display: block;
+			width: 100%;
+			height: calc(100% - 80px);
+			background: url('../img/logo_rus.svg') no-repeat 0 100%;
+			background-size: cover;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+		}
+
+		&__content{position: relative;}
+		&__title{font-size: 2.4rem;}
+
+		&__text{
+			font-size: 1.4rem;
+			margin-bottom: 15px;
+		}
+
+		&__label{margin-bottom: 10px;}
+
+		&__field{
+			input[type="text"],
+			input[type="email"]{
+				height: 5.2rem;
+			}
+		}
+
+		&__fields{
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 12px;
+
+			.btn{min-width: 215px;}
+		}
+	}
+}

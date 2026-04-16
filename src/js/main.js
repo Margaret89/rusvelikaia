@@ -25,6 +25,23 @@ Fancybox.bind("[data-fancybox]", {
 	}
 });
 
+// Импорт Choices.js
+import Choices from 'choices.js';
+import 'choices.js/public/assets/styles/choices.min.css';
+
+// Инициализация после загрузки DOM
+document.addEventListener('DOMContentLoaded', function() {
+	const selectElements = document.querySelectorAll('.js-select');
+	
+	selectElements.forEach(select => {
+		new Choices(select, {
+			searchEnabled: false,  // отключаем поиск
+			itemSelectText: '',    // убираем подсказку
+			shouldSort: false,      // отключаем сортировку
+		});
+	});
+});
+
 //Inputmask
 import Inputmask from "inputmask";
 
@@ -206,19 +223,21 @@ function analyzeChildElements(container) {
 }
 
 // Раскрывающийся блок оформления заказа
-document.querySelector('.js-order-products-toggle').addEventListener('click', () => {
-	const parentOrder = document.querySelector('.js-order-products');
-	const accBody = parentOrder.querySelector('.js-order-products-content');
-	const accContent = parentOrder.querySelector('.js-order-products-info');
-
-	parentOrder.classList.toggle("opened");
+if(document.querySelector('.js-order-products-toggle')){
+	document.querySelector('.js-order-products-toggle').addEventListener('click', () => {
+		const parentOrder = document.querySelector('.js-order-products');
+		const accBody = parentOrder.querySelector('.js-order-products-content');
+		const accContent = parentOrder.querySelector('.js-order-products-info');
 	
-	if ( parentOrder.classList.contains("opened") ) {
-		accBody.style.maxHeight = `${accContent.clientHeight}px`;
-	} else {
-		accBody.style.maxHeight = "0px";
-	}
-});
+		parentOrder.classList.toggle("opened");
+		
+		if ( parentOrder.classList.contains("opened") ) {
+			accBody.style.maxHeight = `${accContent.clientHeight}px`;
+		} else {
+			accBody.style.maxHeight = "0px";
+		}
+	});
+}
 
 //Открыть попап быстрая доставка
 // document.querySelectorAll('input[type="radio"][name="groupName"]').forEach((button) => {
@@ -240,11 +259,66 @@ document.querySelector('.js-order-products-toggle').addEventListener('click', ()
 // 	}
 // });
 
-//Открыть попап стандартная доставка
-document.querySelector('.js-order-check[data-id=fast-delivery]').addEventListener('click', () => {
-	Fancybox.show([{ src: "#fast-delivery", type: "inline" }]);
+if(document.querySelector('.js-order-check')){
+	//Открыть попап стандартная доставка
+	document.querySelector('.js-order-check[data-id=fast-delivery]').addEventListener('click', () => {
+		Fancybox.show([{ src: "#fast-delivery", type: "inline" }]);
+	});
+	//Открыть попап стандартная доставка
+	document.querySelector('.js-order-check[data-id=standart-delivery]').addEventListener('click', () => {
+		Fancybox.show([{ src: "#standart-delivery", type: "inline" }]);
+	});
+}
+
+//Открыть купон
+if(document.querySelector('.js-promocode-field')){
+	const promocodes = document.querySelectorAll('.js-promocode-field');
+	
+	promocodes.forEach(promocode => {
+		promocode.addEventListener('click', function() {
+			this.classList.add('open');
+		});
+	});
+}
+
+// Раскрывающийся блок
+document.querySelectorAll('.js-unwrap-block').forEach((accSection) => {
+	const accHeader = accSection.querySelector('.js-unwrap-head ');
+	const accBody = accSection.querySelector('.js-unwrap-content');
+	const accContent = accSection.querySelector('.js-unwrap-info');
+	
+	accHeader.addEventListener('click', () => {
+		accSection.classList.toggle("opened");
+		
+		if ( accSection.classList.contains("opened") ) {
+			accBody.style.maxHeight = `${accContent.clientHeight}px`;
+		} else {
+			accBody.style.maxHeight = "0px";
+		}
+	});
+
+	accSection.querySelectorAll('.js-unwrap-block-close').forEach((btnClose) => {
+		btnClose.addEventListener('click', () => {
+			accSection.classList.remove("opened");
+			accBody.style.maxHeight = "0px";
+		});
+	});
 });
-//Открыть попап стандартная доставка
-document.querySelector('.js-order-check[data-id=standart-delivery]').addEventListener('click', () => {
-	Fancybox.show([{ src: "#standart-delivery", type: "inline" }]);
-});
+
+//Загрузка файла
+if(document.querySelector('.js-file-upload')){
+	document.querySelectorAll('.js-file-upload input[type="file"]').forEach(input => {
+	  const parent = input.closest('.js-file-upload');
+	  const textElement = parent.querySelector('.js-file-upload-text');
+
+	  console.log('111 = ', );
+	  
+	  input.addEventListener('change', function() {
+		if (this.files.length > 0) {
+		  textElement.textContent = this.files[0].name;
+		} else {
+		  textElement.textContent = 'Прикрепить файл';
+		}
+	  });
+	});
+}

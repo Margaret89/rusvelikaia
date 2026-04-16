@@ -21,7 +21,7 @@ export default defineConfig(({ command, mode })=>{
 		root: resolve(__dirname, "src"),
 		base: (mode=='static')?'/':'./',
 		build: {
-			minify: true,
+			minify: false,
 			assetsInlineLimit: 0,
 			outDir:resolve(__dirname, env.OUTDIR || 'dist'),
 			emptyOutDir:(mode==='bitrix'||env.OUTDIR)?false:true,

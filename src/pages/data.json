@@ -36,6 +36,34 @@
 			"href": "basket-order.html",
 			"title":"Корзина (оформление заказа)"
 		},
+		"lk":{
+			"href": "lk.html",
+			"title":"Личный кабинет"
+		},
+		"lk2":{
+			"href": "lk2.html",
+			"title":"Личный кабинет 2"
+		},
+		"lk-address":{
+			"href": "lk-address.html",
+			"title":"Личный кабинет (адреса доставки)"
+		},
+		"lk-promocode":{
+			"href": "lk-promocode.html",
+			"title":"Личный кабинет (промокоды)"
+		},
+		"lk-history":{
+			"href": "lk-history.html",
+			"title":"Личный кабинет (История заказов)"
+		},
+		"lk-wish":{
+			"href": "lk-wish.html",
+			"title":"Личный кабинет (Избранное)"
+		},
+		"lk-callback":{
+			"href": "lk-callback.html",
+			"title":"Личный кабинет (Обратная связь)"
+		},
 		"tipografika":{
 			"href": "tipografika.html",
 			"title":"Типографика",

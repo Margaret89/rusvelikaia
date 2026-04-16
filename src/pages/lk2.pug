@@ -1,0 +1,133 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'lk2'
+	- var bgWhite = true
+
+block body
+	.lk
+		.lk__title Личный кабинет
+
+		.lk-data-list
+			.lk-data-item.lk-data-item_dark
+				.lk-data-item__top
+					.lk-data-item__title Ваша скидка
+
+					.lk-data-item__info
+						+svg('ic-info','ic-info', '19', '19')
+
+
+				.lk-data-item__sale 0%
+
+			.lk-data-item
+				.lk-data-item__top
+					.lk-data-item__title Бонусные баллы
+
+					.lk-data-item__info
+						+svg('ic-info','ic-info', '19', '19')
+
+				.lk-data-item__num-wrap
+					.lk-data-item__num.lk-data-item__num_red 1 000
+						+svg('ic-lightning','ic-lightning', '11', '21')
+
+			.lk-data-item
+				.lk-data-item__top
+					.lk-data-item__title Номер кабинета
+
+				.lk-data-item__num-wrap
+					.lk-data-item__num 4898305
+					.lk-data-item__copy
+						+svg('ic-copy','ic-copy', '17', '19')
+
+			.lk-data-item
+				.lk-data-item__top
+					.lk-data-item__title Сумма покупок
+
+					.lk-data-item__info
+						+svg('ic-info','ic-info', '19', '19')
+
+				.lk-data-item__num-wrap
+					.lk-data-item__num 356 789
+					.lk-data-item__currency &#8381;
+
+		.lk__content
+			.lk__sidebar
+				ul.lk-menu
+					-
+						var list=[
+							{text:'Личные данные', status:'active'},
+							{text:'Адреса доставки'},
+							{text:'Бонусная система'},
+							{text:'Промокоды', count:'2'},
+							{text:'Истрия заказов'},
+							{text:'Избранное'},
+							{text:'Обратная связь', count:'3', line:'true'},
+						]
+					each item in list
+						li.lk-menu__item(class=item.status?'active':'', class=item.line?'lk-menu__item_line':'')
+							a(href="#").lk-menu__link= item.text
+								if(item.count)
+									span.lk-menu__count= item.count
+
+				.lk__exit
+					a(href="#") Выйти из ЛК
+
+			.lk__main
+				.lk__subtitle Личные данные
+
+				.sale-card
+					.sale-card__text Укажите личные данные ниже и получите постоянную скидку клиента
+					.sale-card__num 5%
+
+				.form-lk
+					.form-lk__content
+						.form-lk__item.form-lk__item_half.js-form-lk-item
+							.form-lk__label Телефон
+
+							.form-lk__field
+								input(name="phone", type="text", class="js-phone", placeholder="Ваш телефон", value="+7 903 254-23-20")
+
+							.form-lk__note Для изменения номера телефона свяжитесь 
+								a(href="#") со службой поддержки «Русь Великая»
+
+						.form-lk__item.form-lk__item_half.js-form-lk-item
+							.form-lk__label E-mail
+
+							.form-lk__field
+								input(name="email", type="email", placeholder="Ваша почта", value="magic@h3lab.ru")
+
+							.form-lk__note
+								a(href="#") Изменить Email
+
+						.form-lk__item.form-lk__item_half.js-form-lk-item
+							.form-lk__label Имя
+
+							.form-lk__field
+								input(name="name", type="text", placeholder="Ваше имя", value="Александр")
+
+						.form-lk__item.form-lk__item_half.js-form-lk-item
+							.form-lk__label Фамилия
+
+							.form-lk__field
+								input(name="surname", type="text", placeholder="Ваша фамилия", value="Лебедев")
+
+						.form-lk__item.form-lk__item_half.js-form-lk-item
+							.form-lk__label Пол
+
+							.form-lk__field
+								select.js-select
+									option(value="man") Мужской
+									option(value="woman") Женскийse
+
+						.form-lk__item.form-lk__item_half.js-form-lk-item
+							.form-lk__label Дата рождения
+
+							.form-lk__field
+								input(name="date", type="date", placeholder="дд.мм.гггг", value="04.07.1985")
+
+					.form-lk__btn
+						button(type="submit").lk__btn
+							span.hide-mobile Сохранить изменения
+							span.hide-desktop Сохранить
+
+	include ./components/_subscribe

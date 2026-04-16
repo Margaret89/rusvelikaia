@@ -80,6 +80,19 @@ block body
 
 		br
 		br
+		br
+		.h2 Нестандартный select
+		select.js-select
+			option(value="по популярности") по популярности ↑
+			option(value="по популярности") по популярности ↓
+			option(value="По цене") По цене ↑
+			option(value="По цене") По цене ↓
+			option(value="По алфавиту") По алфавиту ↑
+			option(value="По алфавиту") По алфавиту ↓
+
+
+		br
+		br
 		div.h2 Иконки
 		.type-icon
 			.type-icon__item
@@ -271,3 +284,18 @@ block body
 				.type-icon__img
 					+svg('ic-arr-down','ic-arr-down', '16', '7')
 				.type-icon__name ic-arr-down
+
+			.type-icon__item
+				.type-icon__img
+					+svg('ic-copy','ic-copy', '17', '19')
+				.type-icon__name ic-copy
+
+			.type-icon__item
+				.type-icon__img
+					+svg('ic-lightning','ic-lightning', '11', '21')
+				.type-icon__name ic-lightning
+
+			.type-icon__item
+				.type-icon__img
+					+svg('ic-clip','ic-clip', '17', '28')
+				.type-icon__name ic-clip

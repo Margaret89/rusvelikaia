@@ -1,0 +1,28 @@
+/*-------------- file-upload -----------------*/
+.file-upload{
+	&__content{
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		cursor: pointer;
+	}
+
+	input[type="file"]{display: none;}
+
+	&__icon{
+		flex-shrink: 0;
+		color: #ADADAD;
+	}
+
+	&__text{
+		font-size: 1.6rem;
+		color: #A7A7A7;
+		text-decoration: underline;
+	}
+}
+
+@media (max-width: 767px) {
+	.file-upload{
+		&__text{font-size: 1.4rem;}
+	}
+}

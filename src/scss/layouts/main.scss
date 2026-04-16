@@ -283,6 +283,10 @@ button.btn{
 	}
 }
 
+@media (min-width: 992px) {
+	.hide-desktop{display: none!important;}
+}
+
 @media (max-width: 991px) {
 	.btn,
 	input[type="submit"].btn,
@@ -299,4 +303,6 @@ button.btn{
 	h1, .h1{font-size: 3.2rem;}
 	h2,.h2{font-size: 4.6rem;}
 	h3,.h3{font-size: 3.8rem;}
+
+	.hide-mobile{display: none!important;}
 }
